@@ -1,0 +1,33 @@
+.cont-general {
+    /*Display*/
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 5fr;
+    grid-template-areas: "logo updates mapas armas .";
+    /*Tamaño*/
+    min-height: 100%;
+    /*Fondo*/
+    background-color: rgba($color: #09134e, $alpha: 0.9);
+    /*Fuente*/
+    font-family: 'Open Sans', sans-serif;
+    color: white;
+    font-size: 30px;
+}
+
+.logo {
+    grid-area: logo;
+    /*Fondo*/
+    background-image: url("../../../assets/img/logo.png");
+    background-size: 100% 100%;
+}
+
+.updates {
+    grid-area: updates;
+}
+
+.mapas {
+    grid-area: mapas;
+}
+
+.armas {
+    grid-area: armas;
+}

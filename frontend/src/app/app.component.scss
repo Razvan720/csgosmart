@@ -2,17 +2,16 @@
     height: 100vh;
     width: 100vw;
     display: grid;
-    grid-template-columns: 12fr;
-    grid-template-rows: 3fr 9fr;
+    grid-template-rows: 2fr 12fr;
     grid-template-areas: "cabecera" "cuerpo";
 }
 
 .cabecera {
     grid-area: cabecera;
-    background-color: rgba($color: #fd00c6, $alpha: 0.3);
+    background-color: rgba($color: #fd00c6, $alpha: 0.1);
 }
 
 .cuerpo {
     grid-area: cuerpo;
-    background-color: rgba($color: #00dffd, $alpha: 0.3);
+    background-color: rgba($color: #00dffd, $alpha: 0.1);
 }

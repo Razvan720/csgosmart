@@ -1,16 +1,12 @@
 .cont-general {
     /*Display*/
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr 5fr;
+    grid-template-columns: 2fr 1fr 1fr 1fr 7fr;
     grid-template-areas: "logo updates mapas armas .";
     /*Tamaño*/
     min-height: 100%;
     /*Fondo*/
-    background-color: rgba($color: #09134e, $alpha: 0.9);
-    /*Fuente*/
-    font-family: 'Open Sans', sans-serif;
-    color: white;
-    font-size: 30px;
+    background-color: rgba($color: #0e153b, $alpha: 0.9);
 }
 
 .logo {
@@ -30,4 +26,22 @@
 
 .armas {
     grid-area: armas;
+}
+
+.enlace {
+    /*Fuente*/
+    font-family: 'Open Sans', sans-serif;
+    color: rgba($color: #888888, $alpha: 1.0);
+    font-size: 25px;
+    text-decoration: none;
+}
+
+.enlace:hover {
+    color: rgba($color: #d4b529, $alpha: 1.0);
+}
+
+.centrado {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

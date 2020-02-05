@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BarranavegacionComponent } from './components/barranavegacion/barranavegacion.component';
+import { BotonarmasComponent } from './components/botonarmas/botonarmas.component';
 
 
 
@@ -12,6 +13,7 @@ import { BarranavegacionComponent } from './components/barranavegacion/barranave
   declarations: [
     AppComponent,
     BarranavegacionComponent,
+    BotonarmasComponent,
 
   ],
   imports: [

@@ -1,0 +1,11 @@
+.enlace {
+    /*Fuente*/
+    font-family: 'Open Sans', sans-serif;
+    color: rgba($color: #888888, $alpha: 1.0);
+    font-size: 25px;
+    text-decoration: none;
+}
+
+.enlace:hover {
+    color: rgba($color: #d4b529, $alpha: 1.0);
+}

@@ -6,6 +6,12 @@ import cors from 'cors';
 import updatesRoutes from './routes/updateRoutes';
 import usuariosRoutes from './routes/usuariosRoutes';
 import armasRoutes from './routes/armasRoutes';
+import cajasRoutes from './routes/cajasRoutes';
+import mapasRoutes from './routes/mapasRoutes';
+import skinsRoutes from './routes/skinsRoutes';
+import utilidadesRoutes from './routes/utilidadesRoutes';
+import categoriasRoutes from './routes/categoriasRoutes';
+import tipogranadasRoutes from './routes/tipogranadasRoutes';
 
 
 class Server {
@@ -28,6 +34,12 @@ class Server {
         this.app.use('/updates', updatesRoutes);
         this.app.use('/usuarios', usuariosRoutes);
         this.app.use('/armas', armasRoutes);
+        this.app.use('/cajas', cajasRoutes);
+        this.app.use('/mapas', mapasRoutes);
+        this.app.use('/skins', skinsRoutes);
+        this.app.use('/utilidades', utilidadesRoutes);
+        this.app.use('/categorias', categoriasRoutes);
+        this.app.use('/tipogranadas', tipogranadasRoutes);
     }
 
     start(): void {

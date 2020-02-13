@@ -1,0 +1,50 @@
+.todo {
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-areas: "sidebar main";
+    /*****/
+    background-image: url("../../../../assets/img/fondo_admin.jpg");
+    background-size: 100% 100%;
+}
+
+.sidebar {
+    height: 100%;
+    width: 100%;
+    grid-area: sidebar;
+    /*****/
+    background-color: rgba(16, 26, 49, 0.849);
+}
+
+.logo {
+    margin-top: 7%;
+    width: 90%;
+}
+
+.cont-botones-side {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /*****/
+    margin-top: 10%;
+}
+
+.link-side {
+    width: 100%;
+    /****/
+    font-size: 2em;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    /****/
+    border-bottom: 2px solid rgb(223, 152, 0);
+}
+
+.link-side:hover {
+    color: rgb(233, 195, 71);
+}
+
+.main {
+    grid-area: main;
+}

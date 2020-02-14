@@ -14,7 +14,6 @@ const routes: Routes = [
     path: 'panel',
     component: ControlComponent
   }
-
 ];
 
 @NgModule({

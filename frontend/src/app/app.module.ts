@@ -9,6 +9,7 @@ import { MainusuarioComponent } from './components/usuario/mainusuario/mainusuar
 import { MainadminComponent } from './components/admin/mainadmin/mainadmin.component';
 import { LoginComponent } from './components/admin/login/login.component';
 import { ControlComponent } from './components/admin/control/control.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 
@@ -26,7 +27,8 @@ import { ControlComponent } from './components/admin/control/control.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

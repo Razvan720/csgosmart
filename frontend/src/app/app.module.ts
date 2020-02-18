@@ -11,7 +11,7 @@ import { LoginComponent } from './components/admin/login/login.component';
 import { ControlComponent } from './components/admin/control/control.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
-
+import { ArmasService } from './services/armas.service';
 
 
 @NgModule({
@@ -30,7 +30,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     AppRoutingModule,
     FontAwesomeModule
   ],
-  providers: [],
+  providers: [
+    ArmasService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

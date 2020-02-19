@@ -7,14 +7,19 @@ import { ControlComponent } from '../components/admin/control/control.component'
 const routes: Routes = [
   {
     path: '',
-    component: LoginComponent,
-    pathMatch: 'full'
+    component: LoginComponent
   },
-  {
-    path: 'panel',
-    component: ControlComponent
-  }
 
+  {
+    path: 'control',
+    component: ControlComponent,
+    loadChildren: () => import('./control/control.module').then(m => m.ControlModule)
+  },
+
+  {
+    path: '**',
+    redirectTo: ''
+  }
 ];
 
 @NgModule({

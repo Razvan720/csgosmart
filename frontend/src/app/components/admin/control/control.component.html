@@ -2,13 +2,13 @@
     <div class="sidebar">
         <img src="../../../../assets/img/logo.png" class="logo">
         <div class="cont-botones-side">
-            <a href="#" class="link-side">UPDATES</a>
-            <a href="#" class="link-side">ARMAS</a>
-            <a href="#" class="link-side">MAPAS</a>
-            <a href="#" class="link-side">CAJAS</a>
+            <a routerLink="updates" class="link-side">UPDATES</a>
+            <a routerLink="armas" class="link-side">ARMAS</a>
+            <a routerLink="mapas" class="link-side">MAPAS</a>
+            <a routerLink="cajas" class="link-side">CAJAS</a>
         </div>
     </div>
     <div class="main">
-        Main
+        <router-outlet></router-outlet>
     </div>
 </div>

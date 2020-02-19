@@ -8,14 +8,8 @@ import { BarranavegacionComponent } from './components/usuario/barranavegacion/b
 import { BotonarmasComponent } from './components/usuario/botonarmas/botonarmas.component';
 import { MainusuarioComponent } from './components/usuario/mainusuario/mainusuario.component';
 import { MainadminComponent } from './components/admin/mainadmin/mainadmin.component';
-import { LoginComponent } from './components/admin/login/login.component';
-import { ControlComponent } from './components/admin/control/control.component';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { AdminupdatesComponent } from './components/admin/adminupdates/adminupdates.component';
-import { AdminarmasComponent } from './components/admin/adminarmas/adminarmas.component';
-import { AdminmapasComponent } from './components/admin/adminmapas/adminmapas.component';
-import { AdmincajasComponent } from './components/admin/admincajas/admincajas.component';
-
+import { ArmasService } from './services/armas.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -30,9 +24,13 @@ import { AdmincajasComponent } from './components/admin/admincajas/admincajas.co
     BrowserModule,
     AppRoutingModule,
     ModulousuarioModule,
-   
+    HttpClientModule
+
+
   ],
-  providers: [],
+  providers: [
+    ArmasService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

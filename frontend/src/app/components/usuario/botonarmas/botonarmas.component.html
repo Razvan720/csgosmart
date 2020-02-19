@@ -7,9 +7,8 @@
             <a class="dropdown-item dropdown-toggle" href="#">
                 <img class="icono rifle"> Rifles</a>
             <ul class="dropdown-menu">
-                <li>
-                    <a class="dropdown-item" href="#">AK-47</a></li>
-
+                <li *ngFor="let arma of armas">
+                    <a class="dropdown-item" href="#">{{ arma.nombre }}</a></li>
 
             </ul>
         </li>

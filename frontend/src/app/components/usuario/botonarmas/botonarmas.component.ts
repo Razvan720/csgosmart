@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ArmasService } from './../../../services/armas.service';
+import { Arma } from './../../../modelo/arma'
 
 @Component({
   selector: 'app-botonarmas',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BotonarmasComponent implements OnInit {
 
-  constructor() { }
+  public armas: Arma;
+  constructor( public armasService: ArmasService) { }
 
   ngOnInit() {
+    this.armasService.getArmas().subscribe(
+      res=> {
+        console.log(res);
+        this.armas = res;
+      },
+      err=> {
+        console.log(err);
+      }
+    )
   }
 
 }

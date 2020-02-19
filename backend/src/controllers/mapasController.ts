@@ -12,6 +12,7 @@ class MapasController {
         const sql = await pool.query('INSERT INTO MAPAS SET ?', [req.body]);
     }
 
+    
     public async read(req: Request, res: Response) {
         const mapas = await pool.query('SELECT * FROM MAPAS', [req.body]);
         res.json(mapas);

@@ -16,9 +16,23 @@ li:hover>ul.dropdown-menu {
     margin-top: -6px;
 }
 
-.icono-rifle {
-    background-image: url("../../../../assets/img/iconos-dropdown/ak.png");
-    background-size: 100% 100%;
-    width: 30px;
-    height: 30px;
+.icono {
+    width: 40px;
+    height: 20px;
+}
+
+.rifle {
+    content: url("../../../../assets/img/iconos-dropdown/ak.png");
+}
+
+.smg {
+    content: url("../../../../assets/img/iconos-dropdown/smg.png");
+}
+
+.pesado {
+    content: url("../../../../assets/img/iconos-dropdown/ak.png");
+}
+
+.pistola {
+    content: url("../../../../assets/img/iconos-dropdown/ak.png");
 }

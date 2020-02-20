@@ -19,19 +19,30 @@
     width: 100%;
     height: 100%;
     grid-area: left;
-    background-color: rgba(0, 204, 255, 0.473);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .cont-center {
     width: 100%;
     height: 100%;
     grid-area: center;
-    background-color: rgba(0, 255, 21, 0.473);
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .cont-right {
     width: 100%;
     height: 100%;
     grid-area: right;
-    background-color: rgba(0, 204, 255, 0.473);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.espaciado {
+    margin: 5%;
 }

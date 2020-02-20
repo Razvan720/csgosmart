@@ -7,6 +7,7 @@ import { AdminupdatesComponent } from 'src/app/components/admin/adminupdates/adm
 import { AdminarmasComponent } from 'src/app/components/admin/adminarmas/adminarmas.component';
 import { AdminmapasComponent } from 'src/app/components/admin/adminmapas/adminmapas.component';
 import { AdmincajasComponent } from 'src/app/components/admin/admincajas/admincajas.component';
+import { ListaupdatesComponent } from 'src/app/components/admin/adminupdates/listaupdates/listaupdates.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { AdmincajasComponent } from 'src/app/components/admin/admincajas/adminca
     AdminupdatesComponent,
     AdminarmasComponent,
     AdminmapasComponent,
-    AdmincajasComponent
+    AdmincajasComponent,
+    ListaupdatesComponent
   ],
   imports: [
     CommonModule,

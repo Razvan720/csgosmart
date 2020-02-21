@@ -46,5 +46,11 @@ class ArmasController {
             res.json(armas);
         });
     }
+    readByCategory(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const armas = yield database_1.default.query('SELECT * FROM ARMAS WHERE categorias_id=?', [req.params.id]);
+            res.json(armas);
+        });
+    }
 }
 exports.armasController = new ArmasController;

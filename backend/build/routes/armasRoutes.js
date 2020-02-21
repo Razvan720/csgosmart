@@ -13,6 +13,7 @@ class ArmasRoutes {
         this.router.put('/:id', armasController_1.armasController.update);
         this.router.delete('/:id', armasController_1.armasController.delete);
         this.router.get('/:id', armasController_1.armasController.readOne);
+        this.router.get('/categoria/:id', armasController_1.armasController.readByCategory);
     }
 }
 const armasRoutes = new ArmasRoutes();

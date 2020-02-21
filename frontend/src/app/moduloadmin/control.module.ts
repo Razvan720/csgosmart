@@ -9,6 +9,9 @@ import { AdminmapasComponent } from 'src/app/components/admin/adminmapas/adminma
 import { AdmincajasComponent } from 'src/app/components/admin/admincajas/admincajas.component';
 import { ListaupdatesComponent } from 'src/app/components/admin/adminupdates/listaupdates/listaupdates.component';
 
+import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
+import { faEdit } from '@fortawesome/free-solid-svg-icons';
+
 
 @NgModule({
   declarations: [
@@ -16,12 +19,20 @@ import { ListaupdatesComponent } from 'src/app/components/admin/adminupdates/lis
     AdminarmasComponent,
     AdminmapasComponent,
     AdmincajasComponent,
-    ListaupdatesComponent
-    
+    ListaupdatesComponent,
+    FontAwesomeModule
+
   ],
   imports: [
     CommonModule,
     ControlRoutingModule
   ]
 })
-export class ControlModule { }
+export class ControlModule {
+  constructor(library: FaIconLibrary) {
+
+    library.addIcons(
+      faEdit
+    );
+  }
+}

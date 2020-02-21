@@ -10,7 +10,6 @@ const routes: Routes = [
     component: MainusuarioComponent,
     pathMatch: 'full'
   },
-  
   {
     path: 'admin',
     component: MainadminComponent,

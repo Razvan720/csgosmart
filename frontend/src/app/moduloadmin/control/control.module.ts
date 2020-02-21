@@ -17,6 +17,7 @@ import { ListaupdatesComponent } from 'src/app/components/admin/adminupdates/lis
     AdminmapasComponent,
     AdmincajasComponent,
     ListaupdatesComponent
+    
   ],
   imports: [
     CommonModule,

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpClientModule , HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable} from 'rxjs';
 import { Arma } from '../modelo/Arma';
 
@@ -19,15 +19,19 @@ export class ArmasService {
     return this.http.get('http://localhost:3000/armas/${id}');
   }
 
+  getArmasByCategoria(id: string): Observable<any> {
+    return this.http.get('http://localhost:3000/armas/categoria${id}');
+  }
+
   saveArma(arma: Arma): Observable<any> {
     return this.http.post('http://localhost:3000/armas', arma);
   }
 
-  deleteArma(id: String): Observable<any> {
+  deleteArma(id: string): Observable<any> {
     return this.http.delete('http://localhost:3000/armas/${id}');
   }
 
-  updateArma(id: String, arma: Arma): Observable<any> {
+  updateArma(id: string, arma: Arma): Observable<any> {
     return this.http.put('http://localhost:3000/armas/${id}', arma);
   }
 }

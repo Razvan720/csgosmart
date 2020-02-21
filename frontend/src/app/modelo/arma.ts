@@ -1,14 +1,15 @@
 export interface Arma{
+    id: string;
     nombre: string;
-    coste: number;
-    danio: number;
-    penetracion: number;
-    municion_cargador: number;
-    municion_reserva: number;
-    recompensa: number;
+    coste: string;
+    danio: string;
+    penetracion: string;
+    municion_cargador: string;
+    municion_reserva: string;
+    recompensa: string;
     img_arma: string;
     gif_recoil: string;
     gif_control: string;
     gif_ingame: string;
-    categorias_id: number;
+    categorias_id: string;
 }

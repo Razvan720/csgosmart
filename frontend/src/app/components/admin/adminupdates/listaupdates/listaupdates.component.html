@@ -4,13 +4,17 @@
         <div class="col-tabla nombre">Nombre</div>
         <div class="col-tabla">Fecha</div>
     </div>
-    <div class="fila">
-        <div class="col-tabla">1</div>
-        <div class="col-tabla nombre">Operacion Hydra</div>
-        <div class="col-tabla">11-05-2019</div>
+
+    <div *ngFor="let update of updates" class="fila">
+        <div class="col-tabla"> {{ update.id }}</div>
+        <div class="col-tabla nombre">{{ update.titulo }}</div>
+        <div class="col-tabla">{{ update.fecha }}</div>
         <div class="col-tabla iconos">
-            <button type="button" class="btn btn-warning espaciado"><fa-icon [icon]="['fas', 'edit']">SS</fa-icon></button>
-            <button type="button" class="btn btn-danger espaciado"></button>
+            <button type="button" class="btn btn-warning espaciado">Editar</button>
+            <button type="button" class="btn btn-danger espaciado">Borrar</button>
         </div>
     </div>
+
+
+
 </div>

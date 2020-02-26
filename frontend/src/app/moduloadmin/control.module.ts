@@ -20,7 +20,7 @@ import { faEdit } from '@fortawesome/free-solid-svg-icons';
     AdminmapasComponent,
     AdmincajasComponent,
     ListaupdatesComponent,
-    FontAwesomeModule
+
 
   ],
   imports: [
@@ -29,10 +29,7 @@ import { faEdit } from '@fortawesome/free-solid-svg-icons';
   ]
 })
 export class ControlModule {
-  constructor(library: FaIconLibrary) {
+  constructor() {
 
-    library.addIcons(
-      faEdit
-    );
   }
 }

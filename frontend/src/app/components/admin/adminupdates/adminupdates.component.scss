@@ -9,9 +9,8 @@
 }
 
 .cont-updates {
-    height: 400px;
     display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-columns: 1fr 4fr 1fr;
     grid-template-areas: "left center right";
 }
 
@@ -31,6 +30,10 @@
     grid-area: center;
     overflow-y: auto;
     overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .cont-right {
@@ -54,6 +57,10 @@
     display: none;
 }
 
+.invisible {
+    display: none;
+}
+
 .cont-add-visible {
     display: flex;
 }
@@ -67,4 +74,8 @@
     width: 50%;
     height: 200px;
     border-radius: 5px;
+}
+
+.boton-add {
+    align-self: center;
 }

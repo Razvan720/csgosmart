@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { UpdatesService } from '../../../../services/updates.service';
+import { Update } from '../../../../modelo/update';
 
 @Component({
   selector: 'app-listaupdates',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListaupdatesComponent implements OnInit {
 
-  constructor() { }
+  public updates: Update;
+
+  constructor(public updateservice: UpdatesService) { }
 
   ngOnInit() {
+    this.updateservice.getUpdates().subscribe(
+      res=> {
+        console.log(res);
+        this.updates = res;
+      },
+      err=> {
+        console.log(err);
+      }
+    )
+
   }
 
 }

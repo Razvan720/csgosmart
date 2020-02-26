@@ -3,20 +3,22 @@
     <div class="cont-updates">
 
         <div class="cont-left">
-            <button type="button" class="btn btn-success" (click)="mostrarAdd()">Nueva Actualización</button>
+
         </div>
         <div class="cont-center">
             <app-listaupdates></app-listaupdates>
+            <button type="button" id="boton-add" class="btn btn-success" (click)="mostrarAdd()">Nueva Actualización</button>
         </div>
         <div class="cont-right">
 
         </div>
     </div>
-    <div id="form-add" class="cont-add">
+    <form id="form-add" [formGroup]="formUpdate" action="addUpdate" class="cont-add">
         <h3>Titulo</h3>
-        <input type="text" class="input-titulo">
+        <input type="text" formControlName="titulo" class="input-titulo">
         <h3>Contenido</h3>
-        <textarea class="input-textarea"></textarea>
-    </div>
+        <textarea formControlName="contenido" class="input-textarea"></textarea>
+        <button type="button" class="btn btn-success">Añadir</button>
+    </form>
 
 </div>

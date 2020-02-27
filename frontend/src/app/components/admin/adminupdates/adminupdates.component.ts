@@ -15,7 +15,7 @@ export class AdminupdatesComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder, private updateservice: UpdatesService) {
     this.formUpdate = formBuilder.group({
-      titulo: [''],
+      titulo: ['',[Validators.required, Validators.minLength(6)]],
       contenido: ['']
     })
    }

@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { ModulousuarioModule } from './modulousuario/modulousuario.module';
+
 /*Fontawesome*/
 // import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 // import {  } from '@fortawesome/free-regular-svg-icons';

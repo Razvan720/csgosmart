@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { ControlRoutingModule } from './control-routing.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AdminupdatesComponent } from 'src/app/components/admin/adminupdates/adminupdates.component';
 import { AdminarmasComponent } from 'src/app/components/admin/adminarmas/adminarmas.component';
@@ -20,12 +21,14 @@ import { faEdit } from '@fortawesome/free-solid-svg-icons';
     AdminmapasComponent,
     AdmincajasComponent,
     ListaupdatesComponent,
-
+    
 
   ],
   imports: [
     CommonModule,
-    ControlRoutingModule
+    ControlRoutingModule,
+    ReactiveFormsModule,
+    
   ]
 })
 export class ControlModule {

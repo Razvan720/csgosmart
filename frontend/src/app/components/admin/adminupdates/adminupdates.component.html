@@ -13,12 +13,11 @@
 
         </div>
     </div>
-    <form id="form-add" [formGroup]="formUpdate" action="addUpdate" class="cont-add">
+    <form [formGroup]="formUpdate" id="form-add" class="cont-add">
         <h3>Titulo</h3>
         <input type="text" formControlName="titulo" class="input-titulo">
         <h3>Contenido</h3>
         <textarea formControlName="contenido" class="input-textarea"></textarea>
-        <button type="button" class="btn btn-success">Añadir</button>
+        <button type="button" (click)="addUpdate()" class="btn btn-success">Añadir</button>
     </form>
-
 </div>

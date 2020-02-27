@@ -1,9 +1,9 @@
 <div class="todo">
 
-    <form class="box" action="index.html" method="post">
+    <form [formGroup]="formLogin" class="box" action="index.html" method="post">
         <h1>Login</h1>
-        <input type="text" name="" placeholder="Username">
-        <input type="password" name="" placeholder="Password">
+        <input type="text" name="" placeholder="Username" formControlName="nombre">
+        <input type="password" name="" placeholder="Password" formControlName="password">
         <input type="submit" name="" value="Login">
     </form>
 

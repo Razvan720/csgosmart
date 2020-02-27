@@ -25,8 +25,6 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     ModulousuarioModule,
     HttpClientModule
-
-
   ],
   providers: [
     ArmasService

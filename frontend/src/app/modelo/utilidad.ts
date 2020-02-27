@@ -1,4 +1,4 @@
-export interface Update {
+export interface Utilidad {
     id: string;
     nombre: string;
     equipo: string;

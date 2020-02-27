@@ -21,7 +21,9 @@ class ArmasController {
     }
     create(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const sql = yield database_1.default.query('INSERT INTO ARMAS SET ?', [req.body]);
+            const resultado = yield database_1.default.query('INSERT INTO ARMAS SET ?', [req.body]);
+            res.json(resultado);
+            console.log(res.json(resultado));
         });
     }
     read(req, res) {
@@ -32,12 +34,14 @@ class ArmasController {
     }
     update(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield database_1.default.query('UPDATE ARMAS SET ? WHERE id=? ', [req.params.id]);
+            const resultado = yield database_1.default.query('UPDATE ARMAS SET ? WHERE id=? ', [req.params.id]);
+            res.json(resultado);
         });
     }
     delete(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield database_1.default.query('DELETE FROM ARMAS WHERE id=? ', [req.params.id]);
+            const resultado = yield database_1.default.query('DELETE FROM ARMAS WHERE id=? ', [req.params.id]);
+            res.json(resultado);
         });
     }
     readOne(req, res) {

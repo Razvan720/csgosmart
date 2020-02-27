@@ -36,6 +36,7 @@ export class AdminupdatesComponent implements OnInit {
       err => {
         console.log(err);
       })
+      
   }
 
 }

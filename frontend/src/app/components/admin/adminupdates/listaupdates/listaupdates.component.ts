@@ -15,14 +15,26 @@ export class ListaupdatesComponent implements OnInit {
 
   ngOnInit() {
     this.updateservice.getUpdates().subscribe(
-      res=> {
+      res => {
         console.log(res);
         this.updates = res;
       },
-      err=> {
+      err => {
         console.log(err);
       }
     )
+  }
+
+  borrarUpdate(id: string) {
+    this.updateservice.deleteUpdates(id).subscribe(
+      res => {
+        console.log(res);
+        document.getElementById(id).remove;
+      },
+      err => {
+        console.log(err);
+      })
+      document.getElementById(id).remove();
 
   }
 

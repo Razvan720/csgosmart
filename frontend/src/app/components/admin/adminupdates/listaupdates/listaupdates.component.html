@@ -5,13 +5,13 @@
         <div class="col-tabla">Fecha</div>
     </div>
 
-    <div *ngFor="let update of updates" class="fila">
+    <div *ngFor="let update of updates" class="fila" id="{{ update.id }}">
         <div class="col-tabla"> {{ update.id }}</div>
         <div class="col-tabla nombre">{{ update.titulo }}</div>
         <div class="col-tabla">{{ update.fecha }}</div>
         <div class="col-tabla iconos">
             <button type="button" class="btn btn-warning espaciado">Editar</button>
-            <button type="button" class="btn btn-danger espaciado">Borrar</button>
+            <button type="button" class="btn btn-danger espaciado" (click)="borrarUpdate(update.id)">Borrar</button>
         </div>
     </div>
 

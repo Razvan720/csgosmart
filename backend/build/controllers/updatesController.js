@@ -21,7 +21,8 @@ class UpdatesController {
     }
     create(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const sql = yield database_1.default.query('INSERT INTO UPDATES SET ?', [req.body]);
+            const resultado = yield database_1.default.query('INSERT INTO UPDATES SET ?', [req.body]);
+            res.json(resultado);
         });
     }
     read(req, res) {
@@ -32,12 +33,14 @@ class UpdatesController {
     }
     update(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield database_1.default.query('UPDATE UPDATES SET ? WHERE id=? ', [req.params.id]);
+            const resultado = yield database_1.default.query('UPDATE UPDATES SET ? WHERE id=? ', [req.params.id]);
+            res.json(resultado);
         });
     }
     delete(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield database_1.default.query('DELETE FROM UPDATES WHERE id=? ', [req.params.id]);
+            const resultado = yield database_1.default.query('DELETE FROM UPDATES WHERE id=? ', [req.params.id]);
+            res.json(resultado);
         });
     }
     readOne(req, res) {

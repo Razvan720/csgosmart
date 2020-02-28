@@ -9,7 +9,8 @@ class SkinsController {
     }
 
     public async create(req: Request, res: Response) {
-        const sql = await pool.query('INSERT INTO SKINS SET ?', [req.body]);
+        const resultado = await pool.query('INSERT INTO SKINS SET ?', [req.body]);
+        res.json(resultado);
     }
 
     public async read(req: Request, res: Response) {
@@ -18,15 +19,15 @@ class SkinsController {
     }
 
     public async update(req: Request, res: Response) {
-        await pool.query('UPDATE SKINS SET ? WHERE id=? ', [req.params.id]);
+        const resultado = await pool.query('UPDATE SKINS SET ? WHERE id=? ', [req.params.id]);
+        res.json(resultado);
     }
 
     public async delete(req: Request, res: Response) {
-        await pool.query('DELETE FROM SKINS WHERE id=? ', [req.params.id]);
+        const resultado = await pool.query('DELETE FROM SKINS WHERE id=? ', [req.params.id]);
     }
 
     public async readOne(req: Request, res: Response) {
-
         const skins = await pool.query('SELECT * FROM SKINS WHERE id=?', [req.params.id]);
         res.json(skins);
     }

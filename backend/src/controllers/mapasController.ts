@@ -9,7 +9,8 @@ class MapasController {
     }
 
     public async create(req: Request, res: Response) {
-        const sql = await pool.query('INSERT INTO MAPAS SET ?', [req.body]);
+        const resultado = await pool.query('INSERT INTO MAPAS SET ?', [req.body]);
+        res.json(resultado);
     }
 
     
@@ -19,11 +20,13 @@ class MapasController {
     }
 
     public async update(req: Request, res: Response) {
-        await pool.query('UPDATE MAPAS SET ? WHERE id=? ', [req.params.id]);
+        const resultado = await pool.query('UPDATE MAPAS SET ? WHERE id=? ', [req.params.id]);
+        res.json(resultado);
     }
 
     public async delete(req: Request, res: Response) {
-        await pool.query('DELETE FROM MAPAS WHERE id=? ', [req.params.id]);
+        const resultado = await pool.query('DELETE FROM MAPAS WHERE id=? ', [req.params.id]);
+        res.json(resultado);
     }
 
     public async readOne(req: Request, res: Response) {

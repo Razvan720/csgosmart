@@ -15,7 +15,7 @@ export class UsuarioService {
   }
 
   getUsuariosById(id: string): Observable<any> {
-    return this.http.get('http://localhost:3000/usuarios/${id}');
+    return this.http.get(`http://localhost:3000/usuarios/${id}`);
   }
 
   saveUsuarios(usuario: Usuario): Observable<any> {
@@ -23,11 +23,11 @@ export class UsuarioService {
   }
 
   deleteUsuarios(id: string): Observable<any> {
-    return this.http.delete('http://localhost:3000/usuarios/${id}');
+    return this.http.delete(`http://localhost:3000/usuarios/${id}`);
   }
 
   updateUsuarios(id: string, usuario: Usuario): Observable<any> {
-    return this.http.put('http://localhost:3000/usuarios/${id}', usuario);
+    return this.http.put(`http://localhost:3000/usuarios/${id}`, usuario);
   }
 
   getLogin(usuario: Usuario): Observable<any> {

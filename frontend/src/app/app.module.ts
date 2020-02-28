@@ -11,6 +11,7 @@ import { MainadminComponent } from './components/admin/mainadmin/mainadmin.compo
 import { ArmasService } from './services/armas.service';
 import { HttpClientModule } from '@angular/common/http';
 
+
 @NgModule({
   declarations: [
     AppComponent,

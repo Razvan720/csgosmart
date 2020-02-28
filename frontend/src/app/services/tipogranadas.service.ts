@@ -14,6 +14,6 @@ export class TipogranadasService {
   }
 
   getTipogrnadasById(id: string): Observable<any> {
-    return this.http.get('http://localhost:3000/tipogranadas/${id}');
+    return this.http.get(`http://localhost:3000/tipogranadas/${id}`);
   }
 }

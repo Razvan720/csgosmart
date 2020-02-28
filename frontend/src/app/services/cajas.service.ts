@@ -16,7 +16,7 @@ export class CajasService {
   }
 
   getCajasById(id: string): Observable<any> {
-    return this.http.get('http://localhost:3000/cajas/${id}');
+    return this.http.get(`http://localhost:3000/cajas/${id}`);
   }
 
   saveArma(caja: Caja): Observable<any> {
@@ -24,10 +24,10 @@ export class CajasService {
   }
 
   deleteArma(id: string): Observable<any> {
-    return this.http.delete('http://localhost:3000/cajas/${id}');
+    return this.http.delete(`http://localhost:3000/cajas/${id}`);
   }
 
   updateArma(id: string, caja: Caja): Observable<any> {
-    return this.http.put('http://localhost:3000/armas/${id}', caja);
+    return this.http.put(`http://localhost:3000/armas/${id}`, caja);
   }
 }

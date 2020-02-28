@@ -5,6 +5,8 @@ import { ModuloadminRoutingModule } from './moduloadmin-routing.module';
 import { LoginComponent } from '../components/admin/login/login.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ControlComponent } from '../components/admin/control/control.component';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 
 @NgModule({
@@ -15,7 +17,8 @@ import { ControlComponent } from '../components/admin/control/control.component'
   imports: [
     CommonModule,
     ModuloadminRoutingModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    ReactiveFormsModule
   ]
 })
 export class ModuloadminModule { }

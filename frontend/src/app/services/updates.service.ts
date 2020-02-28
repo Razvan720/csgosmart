@@ -15,7 +15,7 @@ export class UpdatesService {
   }
 
   getUpdatesById(id: string): Observable<any> {
-    return this.http.get('http://localhost:3000/updates/${id}');
+    return this.http.get(`http://localhost:3000/updates/${id}`);
   }
 
   saveUpdates(update: Update): Observable<any> {
@@ -23,10 +23,10 @@ export class UpdatesService {
   }
 
   deleteUpdates(id: string): Observable<any> {
-    return this.http.delete('http://localhost:3000/updates/${id}');
+    return this.http.delete(`http://localhost:3000/updates/${id}`);
   }
 
   updateUpdates(id: string, update: Update): Observable<any> {
-    return this.http.put('http://localhost:3000/updates/${id}', update);
+    return this.http.put(`http://localhost:3000/updates/${id}`, update);
   }
 }

@@ -14,6 +14,6 @@ export class CategoriasService {
   }
 
   getCategoriasById(id: string): Observable<any> {
-    return this.http.get('http://localhost:3000/categorias/${id}');
+    return this.http.get(`http://localhost:3000/categorias/${id}`);
   }
 }

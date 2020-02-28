@@ -15,7 +15,7 @@ export class MapasService {
   }
 
   getMapasById(id: string): Observable<any> {
-    return this.http.get('http://localhost:3000/mapas/${id}');
+    return this.http.get(`http://localhost:3000/mapas/${id}`);
   }
 
   saveMapa(mapa: Mapa): Observable<any> {
@@ -23,10 +23,10 @@ export class MapasService {
   }
 
   deleteMapa(id: string): Observable<any> {
-    return this.http.delete('http://localhost:3000/cajas/${id}');
+    return this.http.delete(`http://localhost:3000/cajas/${id}`);
   }
 
   updateMapa(id: string, mapa: Mapa): Observable<any> {
-    return this.http.put('http://localhost:3000/armas/${id}', mapa);
+    return this.http.put(`http://localhost:3000/armas/${id}`, mapa);
   }
 }

@@ -16,11 +16,11 @@ export class ArmasService {
   }
 
   getArmasById(id: string): Observable<any> {
-    return this.http.get('http://localhost:3000/armas/${id}');
+    return this.http.get(`http://localhost:3000/armas/${id}`);
   }
 
   getArmasByCategoria(id: string): Observable<any> {
-    return this.http.get('http://localhost:3000/armas/categoria${id}');
+    return this.http.get(`http://localhost:3000/armas/categoria${id}`);
   }
 
   saveArma(arma: Arma): Observable<any> {
@@ -28,11 +28,11 @@ export class ArmasService {
   }
 
   deleteArma(id: string): Observable<any> {
-    return this.http.delete('http://localhost:3000/armas/${id}');
+    return this.http.delete(`http://localhost:3000/armas/${id}`);
   }
 
   updateArma(id: string, arma: Arma): Observable<any> {
-    return this.http.put('http://localhost:3000/armas/${id}', arma);
+    return this.http.put(`http://localhost:3000/armas/${id}`, arma);
   }
 }
 

@@ -18,8 +18,8 @@ export class LoginComponent implements OnInit {
 
   constructor(library: FaIconLibrary, private router: Router, private formBuilder: FormBuilder, private usuarioService: UsuarioService) {
     this.formLogin = formBuilder.group({
-      nombre: ['', [Validators.required, Validators.pattern('')]],
-      password: ['',[Validators.required, Validators.minLength(8), Validators.maxLength(100)]]
+      nombre: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(30)]],
+      password: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(30)]]
     });
     library.addIcons(faUser, faUnlock);
   }

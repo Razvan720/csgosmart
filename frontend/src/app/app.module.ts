@@ -24,7 +24,6 @@ import { ControlComponent } from './components/admin/control/control.component';
 
 
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,8 +31,7 @@ import { ControlComponent } from './components/admin/control/control.component';
     BotonarmasComponent,
     MainusuarioComponent,
     ControlComponent,
-    LoginComponent,
-    
+    LoginComponent
     
   ],
   imports: [

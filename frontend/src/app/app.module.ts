@@ -40,8 +40,6 @@ import { ControlComponent } from './components/admin/control/control.component';
     AppRoutingModule,
     ModulousuarioModule,
     HttpClientModule
-    
-
   ],
   providers: [
     ArmasService

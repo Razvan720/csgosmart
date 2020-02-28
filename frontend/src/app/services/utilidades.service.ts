@@ -19,7 +19,7 @@ export class UtilidadesService {
   }
 
   getUtilidadesById(id: string): Observable<any> {
-    return this.http.get('http://localhost:3000/utilidades/${id}');
+    return this.http.get(`http://localhost:3000/utilidades/${id}`);
   }
 
   saveUtilidad(utilidad: Utilidad): Observable<any> {
@@ -27,10 +27,10 @@ export class UtilidadesService {
   }
 
   deleteUtilidads(id: string): Observable<any> {
-    return this.http.delete('http://localhost:3000/utilidades/${id}');
+    return this.http.delete(`http://localhost:3000/utilidades/${id}`);
   }
 
   updateUtilidad(id: string, utilidad: Utilidad): Observable<any> {
-    return this.http.put('http://localhost:3000/utilidades/${id}', utilidad);
+    return this.http.put(`http://localhost:3000/utilidades/${id}`, utilidad);
   }
 }

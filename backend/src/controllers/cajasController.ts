@@ -9,7 +9,8 @@ class CajasController {
     }
 
     public async create(req: Request, res: Response) {
-        const sql = await pool.query('INSERT INTO CAJAS SET ?', [req.body]);
+        const resultado = await pool.query('INSERT INTO CAJAS SET ?', [req.body]);
+        res.json(resultado);
     }
 
     public async read(req: Request, res: Response) {
@@ -18,15 +19,16 @@ class CajasController {
     }
 
     public async update(req: Request, res: Response) {
-        await pool.query('UPDATE CAJAS SET ? WHERE id=? ', [req.params.id]);
+        const resultado = await pool.query('UPDATE CAJAS SET ? WHERE id=? ', [req.params.id]);
+        res.json(resultado);
     }
 
     public async delete(req: Request, res: Response) {
-        await pool.query('DELETE FROM CAJAS WHERE id=? ', [req.params.id]);
+        const resultado = await pool.query('DELETE FROM CAJAS WHERE id=? ', [req.params.id]);
+        res.json(resultado);
     }
 
     public async readOne(req: Request, res: Response) {
-
         const cajas = await pool.query('SELECT * FROM CAJAS WHERE id=?', [req.params.id]);
         res.json(cajas);
     }

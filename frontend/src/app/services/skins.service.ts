@@ -15,7 +15,7 @@ export class SkinsService {
   }
 
   getSkinsById(id: string): Observable<any> {
-    return this.http.get('http://localhost:3000/skins/${id}');
+    return this.http.get(`http://localhost:3000/skins/${id}`);
   }
 
   saveSkin(skin: Skin): Observable<any> {
@@ -23,10 +23,10 @@ export class SkinsService {
   }
 
   deleteSkin(id: string): Observable<any> {
-    return this.http.delete('http://localhost:3000/skins/${id}');
+    return this.http.delete(`http://localhost:3000/skins/${id}`);
   }
 
   updateSkin(id: string, skin: Skin): Observable<any> {
-    return this.http.put('http://localhost:3000/skins/${id}', skin);
+    return this.http.put(`http://localhost:3000/skins/${id}`, skin);
   }
 }

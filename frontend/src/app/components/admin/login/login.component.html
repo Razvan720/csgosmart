@@ -1,11 +1,39 @@
 <div class="todo">
 
-    <form class="box" action="index.html" method="post">
+    <form [formGroup]="formLogin" class="box" method="post">
         <h1>Login</h1>
-        <input type="text" name="" placeholder="Username">
-        <input type="password" name="" placeholder="Password">
 
-        <input type="submit" name="" value="Login">
+        <input type="text" name="" placeholder="Username" formControlName="nombre">
+        <div *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)">
+            <div *ngIf="nombre.errors.required">
+                El nombre del usuario es obligatorio
+            </div>
+
+            <div *ngIf="nombre.errors.minlength">
+                El nombre debe ser de al menos 8 carácteres
+            </div>
+
+            <div *ngIf="nombre.errors.naxlenght">
+                El nombre no debe superar los 30 caraácteres
+            </div>
+        </div>
+
+        <input type="password" name="" placeholder="Password" formControlName="password">
+        <div *ngIf="password.invalid && (password.dirty || password.touched)">
+            <div *ngIf="password.errors.required">
+                La contraseña del usuario es obligatoria
+            </div>
+
+            <div *ngIf="password.errors.minlength">
+                La contraseña debe ser de al menos 8 carácteres
+            </div>
+
+            <div *ngIf="password.errors.naxlenght">
+                La contraseña no debe superar los 30 caraácteres
+            </div>
+        </div>
+
+        <input type="submit" name="" [disabled]="!formLogin.valid" value="Login">
     </form>
 
 </div>

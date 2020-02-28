@@ -9,7 +9,8 @@ class UpdatesController {
     }
 
     public async create(req: Request, res: Response) {
-        const sql = await pool.query('INSERT INTO UPDATES SET ?', [req.body]);
+        const resultado = await pool.query('INSERT INTO UPDATES SET ?', [req.body]);
+        res.json(resultado);
                
     }
 
@@ -19,19 +20,16 @@ class UpdatesController {
     }
 
     public async update(req: Request, res: Response) {
-
-        await pool.query('UPDATE UPDATES SET ? WHERE id=? ', [req.params.id]);
-
+        const resultado = await pool.query('UPDATE UPDATES SET ? WHERE id=? ', [req.params.id]);
+        res.json(resultado);
     }
 
     public async delete(req: Request, res: Response) {
-
-        await pool.query('DELETE FROM UPDATES WHERE id=? ', [req.params.id]);
-
+        const resultado = await pool.query('DELETE FROM UPDATES WHERE id=? ', [req.params.id]);
+        res.json(resultado);
     }
 
     public async readOne(req: Request, res: Response) {
-
         const usuarios = await pool.query('SELECT * FROM UPDATES WHERE id=?', [req.params.id]);
         res.json(usuarios);
     }

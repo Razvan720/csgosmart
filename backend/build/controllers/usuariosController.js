@@ -13,6 +13,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const database_1 = __importDefault(require("../database"));
+//Constantes para la fase de encriptacion y token
+const jwt = require('jsonwebtoken');
+const bcrypt = require('bcryptjs');
+const SECRET_KEY = "pass";
 class UsuariosController {
     index(req, res) {
         res.json({
@@ -21,7 +25,8 @@ class UsuariosController {
     }
     create(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const sql = yield database_1.default.query('INSERT INTO USUARIOS SET ?', [req.body]);
+            const resultado = yield database_1.default.query('INSERT INTO USUARIOS SET ?', [req.body]);
+            res.json(resultado);
         });
     }
     read(req, res) {
@@ -32,18 +37,39 @@ class UsuariosController {
     }
     update(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield database_1.default.query('UPDATE USUARIOS SET ? WHERE id=? ', [req.params.id]);
+            const resultado = yield database_1.default.query('UPDATE USUARIOS SET ? WHERE id=? ', [req.params.id]);
+            res.json(resultado);
         });
     }
     delete(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield database_1.default.query('DELETE FROM USUARIOS WHERE id=? ', [req.params.id]);
+            const resultado = yield database_1.default.query('DELETE FROM USUARIOS WHERE id=? ', [req.params.id]);
+            res.json(resultado);
         });
     }
     readOne(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const usuarios = yield database_1.default.query('SELECT * FROM USUARIOS WHERE id=?', [req.params.id]);
             res.json(usuarios);
+        });
+    }
+    readLogin(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const copiaUsuario = {
+                nombre: req.body.nombre,
+                password: req.body.password
+            };
+            const usuarios = yield database_1.default.query('SELECT * FROM USUARIOS WHERE nombre = ? AND password = ?', [req.body.nombre, req.body.foto]);
+            console.log(usuarios.length);
+            if (usuarios.length == 0) {
+                res.json({ 'message': 'Error al logearse' });
+            }
+            else {
+                const expiresIn = 24 * 60 * 60;
+                const accessToken = jwt.sign({ id: copiaUsuario.nombre }, SECRET_KEY, { expiresIn: expiresIn });
+                console.log(accessToken);
+                res.json(accessToken);
+            }
         });
     }
 }

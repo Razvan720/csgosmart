@@ -9,9 +9,7 @@ import { AdminarmasComponent } from 'src/app/components/admin/adminarmas/adminar
 import { AdminmapasComponent } from 'src/app/components/admin/adminmapas/adminmapas.component';
 import { AdmincajasComponent } from 'src/app/components/admin/admincajas/admincajas.component';
 import { ListaupdatesComponent } from 'src/app/components/admin/adminupdates/listaupdates/listaupdates.component';
-
-import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
-import { faEdit } from '@fortawesome/free-solid-svg-icons';
+import { ListaarmasComponent } from '../components/admin/adminarmas/listaarmas/listaarmas.component';
 
 
 @NgModule({
@@ -28,6 +26,7 @@ import { faEdit } from '@fortawesome/free-solid-svg-icons';
     CommonModule,
     ControlRoutingModule,
     ReactiveFormsModule,
+
     
   ]
 })

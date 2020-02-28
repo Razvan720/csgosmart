@@ -15,7 +15,7 @@ export class UpdatesService {
   }
 
   getUpdatesById(id: string): Observable<any> {
-    return this.http.get('http://localhost:3000/updates/${id}');
+    return this.http.get(`http://localhost:3000/updates/${id}`);
   }
 
   saveUpdates(update: Update): Observable<any> {

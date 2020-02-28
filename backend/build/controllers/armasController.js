@@ -23,7 +23,6 @@ class ArmasController {
         return __awaiter(this, void 0, void 0, function* () {
             const resultado = yield database_1.default.query('INSERT INTO ARMAS SET ?', [req.body]);
             res.json(resultado);
-            console.log(res.json(resultado));
         });
     }
     read(req, res) {

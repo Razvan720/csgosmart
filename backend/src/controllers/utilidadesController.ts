@@ -9,7 +9,8 @@ class UtilidadesController {
     }
 
     public async create(req: Request, res: Response) {
-        const sql = await pool.query('INSERT INTO UTILIDADES SET ?', [req.body]);
+        const resultado = await pool.query('INSERT INTO UTILIDADES SET ?', [req.body]);
+        res.json(resultado);
     }
 
     public async read(req: Request, res: Response) {
@@ -18,19 +19,19 @@ class UtilidadesController {
     }
 
     public async update(req: Request, res: Response) {
-        await pool.query('UPDATE UTILIDADES SET ? WHERE id=? ', [req.params.id]);
+        const resultado = await pool.query('UPDATE UTILIDADES SET ? WHERE id=? ', [req.params.id]);
+        res.json(resultado);
     }
 
     public async delete(req: Request, res: Response) {
-        await pool.query('DELETE FROM UTILIDADES WHERE id=? ', [req.params.id]);
+        const resultado = await pool.query('DELETE FROM UTILIDADES WHERE id=? ', [req.params.id]);
+        res.json(resultado);
     }
 
     public async readOne(req: Request, res: Response) {
-
         const utilidades = await pool.query('SELECT * FROM UTILIDADES WHERE id=?', [req.params.id]);
         res.json(utilidades);
     }
-
 
 }
 export const utilidadesController = new UtilidadesController;

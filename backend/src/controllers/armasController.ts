@@ -11,7 +11,6 @@ class ArmasController {
     public async create(req: Request, res: Response) {
         const resultado = await pool.query('INSERT INTO ARMAS SET ?', [req.body]);
         res.json(resultado);
-        console.log(res.json(resultado))
     }
 
     public async read(req: Request, res: Response) {

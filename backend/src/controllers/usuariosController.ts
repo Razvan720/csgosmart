@@ -14,7 +14,8 @@ class UsuariosController {
     }
 
     public async create(req: Request, res: Response) {
-        const sql = await pool.query('INSERT INTO USUARIOS SET ?', [req.body]);      
+        const resultado = await pool.query('INSERT INTO USUARIOS SET ?', [req.body]);      
+        res.json(resultado);
     }
 
     public async read(req: Request, res: Response) {
@@ -23,11 +24,13 @@ class UsuariosController {
     }
 
     public async update(req: Request, res: Response) {
-        await pool.query('UPDATE USUARIOS SET ? WHERE id=? ', [req.params.id]);
+        const resultado = await pool.query('UPDATE USUARIOS SET ? WHERE id=? ', [req.params.id]);
+        res.json(resultado);
     }
 
     public async delete(req: Request, res: Response) {
-        await pool.query('DELETE FROM USUARIOS WHERE id=? ', [req.params.id]);
+        const resultado = await pool.query('DELETE FROM USUARIOS WHERE id=? ', [req.params.id]);
+        res.json(resultado);
     }
 
     public async readOne(req: Request, res: Response) {

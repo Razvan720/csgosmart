@@ -21,7 +21,8 @@ class SkinsController {
     }
     create(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const sql = yield database_1.default.query('INSERT INTO SKINS SET ?', [req.body]);
+            const resultado = yield database_1.default.query('INSERT INTO SKINS SET ?', [req.body]);
+            res.json(resultado);
         });
     }
     read(req, res) {
@@ -32,12 +33,13 @@ class SkinsController {
     }
     update(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield database_1.default.query('UPDATE SKINS SET ? WHERE id=? ', [req.params.id]);
+            const resultado = yield database_1.default.query('UPDATE SKINS SET ? WHERE id=? ', [req.params.id]);
+            res.json(resultado);
         });
     }
     delete(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield database_1.default.query('DELETE FROM SKINS WHERE id=? ', [req.params.id]);
+            const resultado = yield database_1.default.query('DELETE FROM SKINS WHERE id=? ', [req.params.id]);
         });
     }
     readOne(req, res) {

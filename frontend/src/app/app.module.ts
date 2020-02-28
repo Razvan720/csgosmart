@@ -23,8 +23,6 @@ import { ControlComponent } from './components/admin/control/control.component';
 
 
 
-
-
 @NgModule({
   declarations: [
     AppComponent,

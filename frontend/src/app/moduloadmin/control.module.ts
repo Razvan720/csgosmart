@@ -13,9 +13,6 @@ import { ListaupdatesComponent } from 'src/app/components/admin/adminupdates/lis
 import { ListaarmasComponent } from '../components/admin/adminarmas/listaarmas/listaarmas.component';
 
 
-
-
-
 @NgModule({
   declarations: [
     AdminupdatesComponent,
@@ -31,6 +28,7 @@ import { ListaarmasComponent } from '../components/admin/adminarmas/listaarmas/l
     CommonModule,
     ControlRoutingModule,
     ReactiveFormsModule,
+
     
   ]
 })

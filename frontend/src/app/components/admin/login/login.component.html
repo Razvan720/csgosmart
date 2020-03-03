@@ -3,17 +3,17 @@
     <form [formGroup]="formLogin" class="box" method="post">
         <h1>Login</h1>
 
-        <input type="text" name="" placeholder="Username" formControlName="nombre">
-        <div *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)">
-            <div *ngIf="nombre.errors.required">
+        <input type="text" name="" placeholder="Username" formControlName="usuario">
+        <div *ngIf="usuario.invalid && (usuario.dirty || usuario.touched)">
+            <div *ngIf="usuario.errors.required">
                 El nombre del usuario es obligatorio
             </div>
 
-            <div *ngIf="nombre.errors.minlength">
+            <div *ngIf="usuario.errors.minlength">
                 El nombre debe ser de al menos 8 carácteres
             </div>
 
-            <div *ngIf="nombre.errors.naxlenght">
+            <div *ngIf="usuario.errors.naxlenght">
                 El nombre no debe superar los 30 caraácteres
             </div>
         </div>

@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
 
   constructor(library: FaIconLibrary, private router: Router, private formBuilder: FormBuilder, private usuarioService: UsuarioService) {
     this.formLogin = formBuilder.group({
-      nombre: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(30)]],
+      usuario: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(30)]],
       password: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(30)]]
     });
     library.addIcons(faUser, faUnlock);
@@ -37,5 +37,12 @@ export class LoginComponent implements OnInit {
          console.log(err);
        });
    }
+   
+   get usuario(){
+     return this.formLogin.get('usuario');
+   }
 
+   get password(){
+    return this.formLogin.get('usuario');
+  }
 }

@@ -20,6 +20,8 @@ import { MainusuarioComponent } from './components/usuario/mainusuario/mainusuar
 import { ArmasService } from './services/armas.service';
 import { LoginComponent } from './components/admin/login/login.component';
 import { ControlComponent } from './components/admin/control/control.component';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 
 
@@ -31,15 +33,17 @@ import { ControlComponent } from './components/admin/control/control.component';
     BotonarmasComponent,
     MainusuarioComponent,
     ControlComponent,
-    LoginComponent
+    LoginComponent,
+    
     
   ],
   imports: [
     BrowserModule,
-    // FontAwesomeModule,
+    
     AppRoutingModule,
     ModulousuarioModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [
     ArmasService

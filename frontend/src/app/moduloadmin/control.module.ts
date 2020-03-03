@@ -9,7 +9,8 @@ import { AdminarmasComponent } from 'src/app/components/admin/adminarmas/adminar
 import { AdminmapasComponent } from 'src/app/components/admin/adminmapas/adminmapas.component';
 import { AdmincajasComponent } from 'src/app/components/admin/admincajas/admincajas.component';
 import { ListaupdatesComponent } from 'src/app/components/admin/adminupdates/listaupdates/listaupdates.component';
-import { ListaarmasComponent } from '../components/admin/adminarmas/listaarmas/listaarmas.component';
+import { AdminperfilComponent } from '../components/admin/adminperfil/adminperfil.component';
+
 
 
 @NgModule({
@@ -19,13 +20,14 @@ import { ListaarmasComponent } from '../components/admin/adminarmas/listaarmas/l
     AdminmapasComponent,
     AdmincajasComponent,
     ListaupdatesComponent,
+    AdminperfilComponent
     
 
   ],
   imports: [
     CommonModule,
     ControlRoutingModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule
 
     
   ]

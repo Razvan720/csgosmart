@@ -1,0 +1,45 @@
+.tabla {
+    width: 100%;
+    display: table;
+    user-select: none;
+    /*****/
+    border: 3px solid black;
+    border-radius: 3px;
+    background: rgb(224, 224, 224);
+    color: black;
+}
+
+.fila {
+    cursor: pointer;
+    display: table-row;
+}
+
+
+/*Color zebra*/
+
+.fila:nth-child(even) {
+    background-color: #9e9e9e;
+}
+
+.fila:hover {
+    background: rgb(122, 185, 201);
+}
+
+.titulos {
+    display: table-header-group;
+    font-weight: bold;
+}
+
+.col-tabla {
+    display: table-cell;
+    padding: 12px;
+    overflow-x: hidden;
+}
+
+.id {
+    max-width: 20%;
+}
+
+.nombre {
+    max-width: 250px;
+}

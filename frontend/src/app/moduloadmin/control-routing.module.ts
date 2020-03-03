@@ -4,6 +4,7 @@ import { AdminupdatesComponent } from 'src/app/components/admin/adminupdates/adm
 import { AdminarmasComponent } from 'src/app/components/admin/adminarmas/adminarmas.component';
 import { AdminmapasComponent } from 'src/app/components/admin/adminmapas/adminmapas.component';
 import { AdmincajasComponent } from 'src/app/components/admin/admincajas/admincajas.component';
+import { AdminperfilComponent } from '../components/admin/adminperfil/adminperfil.component';
 
 
 const routes: Routes = [
@@ -27,6 +28,10 @@ const routes: Routes = [
   {
     path: 'cajas',
     component: AdmincajasComponent,
+  },
+  {
+    path: 'perfil',
+    component: AdminperfilComponent,
   },
   {
     path: '**',

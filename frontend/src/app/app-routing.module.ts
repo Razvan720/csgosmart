@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { MainusuarioComponent } from './components/usuario/mainusuario/mainusuario.component';
-import { MainadminComponent } from './components/admin/mainadmin/mainadmin.component';
+import { LoginComponent } from './components/admin/login/login.component';
+import { ControlComponent } from './components/admin/control/control.component';
 
 
 const routes: Routes = [
@@ -10,28 +11,17 @@ const routes: Routes = [
     component: MainusuarioComponent,
     pathMatch: 'full'
   },
-  
   {
     path: 'admin',
-    component: MainadminComponent,
-    loadChildren: () => import('./moduloadmin/moduloadmin.module').then(m => m.ModuloadminModule)
+    component: LoginComponent
+  },
+  {
+    path: 'control',
+    component: ControlComponent,
+    loadChildren: () => import('./moduloadmin/control.module').then(m => m.ControlModule)
   },
 
   { path: '**', redirectTo:''}
-
-
-  /*  {
-      path: 'admin',
-      component: MainadminComponent,
-      children: [
-        { path: '', redirectTo: 'updates', pathMatch: 'full' },
-        { path: 'updates',component:AdminupdatesComponent },
-        { path: 'armas',component:AdminarmasComponent },
-        { path: 'mapas',component:AdminmapasComponent },
-        { path: '**', redirectTo: 'updates', pathMatch: 'full' }
-      ]
-  
-    }*/
 
 ];
 

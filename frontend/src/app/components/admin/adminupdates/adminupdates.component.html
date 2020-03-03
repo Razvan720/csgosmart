@@ -1,15 +1,23 @@
 <div class="todo">
     <h1>Updates</h1>
     <div class="cont-updates">
-        <div class="cont-left"> Boton add</div>
-        <div class="cont-center"> Listado</div>
-        <div class="cont-right"> Editar y eliminar</div>
-    </div>
-    <div class="cont-add">
-        <h3>Titulo</h3>
-        <input type="text">
-        <h3>Texto</h3>
-        <input type="text">
-    </div>
 
+        <div class="cont-left">
+
+        </div>
+        <div class="cont-center">
+            <app-listaupdates></app-listaupdates>
+            <button type="button" id="boton-add" class="btn btn-success" (click)="mostrarAdd()">Nueva Actualización</button>
+        </div>
+        <div class="cont-right">
+
+        </div>
+    </div>
+    <form [formGroup]="formUpdate" id="form-add" class="cont-add">
+        <h3>Titulo</h3>
+        <input type="text" formControlName="titulo" class="input-titulo">
+        <h3>Contenido</h3>
+        <textarea formControlName="contenido" class="input-textarea"></textarea>
+        <button type="button" (click)="addUpdate()" class="btn btn-success">Añadir</button>
+    </form>
 </div>

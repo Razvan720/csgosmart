@@ -9,11 +9,11 @@ export class TipogranadasService {
 
   constructor(private http: HttpClient) { }
 
-  getTipogrnadas(): Observable<any> {
+  getTipogranadas(): Observable<any> {
     return this.http.get('http://localhost:3000/tipogranadas');
   }
 
-  getTipogrnadasById(id: string): Observable<any> {
+  getTipogranadasById(id: string): Observable<any> {
     return this.http.get(`http://localhost:3000/tipogranadas/${id}`);
   }
 }

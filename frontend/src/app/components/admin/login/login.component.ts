@@ -6,7 +6,6 @@ import {  } from '@fortawesome/free-brands-svg-icons';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UsuarioService } from 'src/app/services/usuario.service';
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',

@@ -40,16 +40,16 @@ class UsuariosController {
 
     public async readLogin(req: Request, res: Response) {
         const copiaUsuario = {
-            nombre: req.body.nombre,
+            usuario: req.body.usuario,
             password: req.body.password
         };
-        const usuarios = await pool.query('SELECT * FROM USUARIOS WHERE nombre = ? AND password = ?', [req.body.nombre, req.body.foto]);
+        const usuarios = await pool.query('SELECT * FROM USUARIOS WHERE usuario = ? AND password = ?', [req.body.nombre, req.body.foto]);
         console.log(usuarios.length);
         if (usuarios.length == 0) {
             res.json({ 'message': 'Error al logearse' });
         } else {
             const expiresIn = 24 * 60 * 60;
-            const accessToken = jwt.sign({ id: copiaUsuario.nombre }, SECRET_KEY, {expiresIn:expiresIn});
+            const accessToken = jwt.sign({ id: copiaUsuario.usuario }, SECRET_KEY, {expiresIn:expiresIn});
             console.log(accessToken);
             res.json(accessToken);
         }

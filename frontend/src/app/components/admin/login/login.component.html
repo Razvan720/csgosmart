@@ -1,6 +1,6 @@
 <div class="todo">
 
-    <form [formGroup]="formLogin" class="box">
+    <form [formGroup]="formLogin" class="box" (submit)="submit()">
         <h1>Login</h1>
 
         <input type="text" placeholder="Username" formControlName="usuario">
@@ -32,8 +32,8 @@
                 La contraseña no debe superar los 30 caraácteres
             </div>
         </div>
-
-        <input type="submit" name="" [disabled]="!formLogin.valid" value="Login">
+        
+        <input type="submit" [disabled]="!formLogin.valid" value="Login">
     </form>
 
 </div>

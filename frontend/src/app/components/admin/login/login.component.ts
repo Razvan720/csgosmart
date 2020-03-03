@@ -32,11 +32,20 @@ export class LoginComponent implements OnInit {
     this.usuarioService.getLogin(this.formLogin.value).subscribe(
        res => {
          localStorage.setItem('token', res);
-         this.router.navigate(['/home']);
+         this.router.navigate(['/control']);
+         console.log(res);
        },
        err => {
          console.log(err);
        });
    }
+
+  get usuario() {
+    return this.formLogin.get('usuario');
+  }
+
+  get password() {
+    return this.formLogin.get('password');
+  }
 
 }

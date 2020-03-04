@@ -1,18 +1,23 @@
-<div class="tabla">
-    <div class="titulos">
-        <div class="col-tabla">ID</div>
-        <div class="col-tabla nombre">Nombre</div>
-        <div class="col-tabla">Fecha</div>
-    </div>
+<div class="contenedor">
+    <div class="tabla">
+        <div class="titulos">
 
-    <div *ngFor="let update of updates" class="fila" id="{{ update.id }}">
-        <div class="col-tabla"> {{ update.id }}</div>
-        <div class="col-tabla nombre">{{ update.titulo }}</div>
-        <div class="col-tabla">{{ update.fecha }}</div>
-        <div class="col-tabla iconos">
-            <button type="button" class="btn btn-warning espaciado">Editar</button>
-            <button type="button" class="btn btn-danger espaciado" (click)="borrarUpdate(update.id)">Borrar</button>
+            <div class="col-tabla nombre">Nombre</div>
+            <div class="col-tabla">Fecha</div>
         </div>
+
+        <div *ngFor="let update of updates" class="fila" id="{{ update.id }}">
+
+            <div class="col-tabla nombre">{{ update.titulo }}</div>
+            <div class="col-tabla">{{ update.fecha }}</div>
+            <div class="col-tabla iconos">
+                <button type="button" class="btn btn-warning espaciado">Editar</button>
+                <button type="button" class="btn btn-danger espaciado" (click)="borrarUpdate(update.id)">Borrar</button>
+            </div>
+        </div>
+
+
+
     </div>
 
 </div>

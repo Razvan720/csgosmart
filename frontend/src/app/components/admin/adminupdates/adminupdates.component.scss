@@ -1,82 +1,49 @@
 .todo {
     width: 100%;
     height: 100%;
-    /****/
-    display: flex;
-    flex-direction: column;
-    /****/
+    max-height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-rows: 1fr 4fr 2fr;
+    grid-template-areas: "titulo titulo titulo" ". centro ." ". nuevo .";
+}
+
+.cont-titulo {
+    grid-area: titulo;
+    height: 60%;
+    width: 60%;
+    margin: 0 auto;
+    text-align: center;
     color: white;
+    border-bottom: 1px solid rgb(100, 255, 108);
 }
 
 .cont-updates {
+    grid-area: centro;
     height: 100%;
-    display: grid;
-    grid-template-columns: 1fr 4fr 1fr;
-    grid-template-areas: "left center right";
-}
-
-.cont-left {
     width: 100%;
-    height: 100%;
-    grid-area: left;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    overflow-y: hidden;
 }
 
-.cont-center {
+.cont-nuevo {
+    height: 100%;
     width: 100%;
-    height: 100%;
-    grid-area: center;
-    overflow-y: auto;
-    overflow-x: hidden;
     display: flex;
-    flex-direction: column;
     align-items: center;
-}
-
-.cont-right {
-    width: 100%;
-    height: 100%;
-    grid-area: right;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.espaciado {
-    margin: 5%;
-}
-
-.cont-add {
-    height: 100%;
-    margin-top: 50px;
-    flex-direction: column;
-    align-items: center;
-    display: none;
-}
-
-.invisible {
-    display: none;
-}
-
-.cont-add-visible {
-    display: flex;
+    grid-area: nuevo;
 }
 
 .input-titulo {
-    width: 50%;
+    width: 80%;
     border-radius: 5px;
 }
 
 .input-textarea {
-    width: 50%;
+    width: 90%;
     height: 200px;
     border-radius: 5px;
 }
 
-.boton-add {
-    align-self: center;
+.aniadir {
+    width: 50%;
 }

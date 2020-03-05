@@ -4,7 +4,7 @@
     max-height: 100%;
     display: grid;
     grid-template-columns: 1fr 4fr 1fr;
-    grid-template-rows: 1fr 4fr 2fr;
+    grid-template-rows: 1fr 4fr 3fr;
     grid-template-areas: "titulo titulo titulo" ". centro ." ". nuevo .";
 }
 
@@ -26,11 +26,27 @@
 }
 
 .cont-nuevo {
+    grid-area: nuevo;
     height: 100%;
     width: 100%;
     display: flex;
     align-items: center;
-    grid-area: nuevo;
+}
+
+.aniadir {
+    width: 50%;
+}
+
+.cont-add {
+    display: none;
+}
+
+.cont-add-visible {
+    display: block;
+}
+
+.invisible {
+    display: none;
 }
 
 .input-titulo {
@@ -42,8 +58,4 @@
     width: 90%;
     height: 200px;
     border-radius: 5px;
-}
-
-.aniadir {
-    width: 50%;
 }

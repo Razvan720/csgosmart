@@ -9,33 +9,15 @@
     </div>
 
     <div class="cont-nuevo">
-        <!-- Boton activador Modal -->
-        <button type="button" class="btn btn-success aniadir" data-toggle="modal" data-target="#modalUpdate">Nuevo Update</button>
+        <button type="button" id="boton-add" class="btn btn-success" (click)="mostrarAdd()">Nueva Actualización</button>
 
-        <!-- Modal -->
-        <div class="modal fade" id="modalUpdate" tabindex="-1" role="dialog" aria-labelledby="modalUpdate" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="modalUpdate">Añadir Update</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    </div>
-                    <form [formGroup]="formUpdate" id="form-add">
-                        <div class="modal-body">
-                            <h4>Titulo</h4>
-                            <input type="text" formControlName="titulo" class="input-titulo">
-                            <h4>Contenido</h4>
-                            <textarea formControlName="contenido" class="input-textarea"></textarea>
-
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                            <button type="button" (click)="addUpdate()" class="btn btn-success">Añadir</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
+        <form [formGroup]="formUpdate" id="form-add" class="cont-add">
+            <h3>Titulo</h3>
+            <input type="text" formControlName="titulo" class="input-titulo">
+            <h3>Contenido</h3>
+            <textarea formControlName="contenido" class="input-textarea"></textarea>
+            <button type="button" (click)="addUpdate()" class="btn btn-success">Añadir</button>
+        </form>
     </div>
 
 </div>

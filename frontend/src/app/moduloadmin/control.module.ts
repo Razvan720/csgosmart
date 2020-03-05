@@ -21,15 +21,11 @@ import { AdminperfilComponent } from '../components/admin/adminperfil/adminperfi
     AdmincajasComponent,
     ListaupdatesComponent,
     AdminperfilComponent
-    
-
   ],
   imports: [
     CommonModule,
     ControlRoutingModule,
     ReactiveFormsModule
-
-    
   ]
 })
 export class ControlModule {

@@ -3,8 +3,8 @@ import pool from '../database';
 
 //Constantes para la fase de encriptacion y token
 const jwt = require('jsonwebtoken');
+const SECRET_KEY = "passwd";
 const bcrypt = require('bcryptjs');
-const SECRET_KEY = "pass";
 
 class UsuariosController {
     index(req: Request, res: Response) {
@@ -14,7 +14,7 @@ class UsuariosController {
     }
 
     public async create(req: Request, res: Response) {
-        const resultado = await pool.query('INSERT INTO USUARIOS SET ?', [req.body]);      
+        const resultado = await pool.query('INSERT INTO USUARIOS SET ?', [req.body]);
         res.json(resultado);
     }
 
@@ -43,17 +43,40 @@ class UsuariosController {
             usuario: req.body.usuario,
             password: req.body.password
         };
-        const usuarios = await pool.query('SELECT * FROM USUARIOS WHERE usuario = ? AND password = ?', [req.body.nombre, req.body.foto]);
-        console.log(usuarios.length);
-        if (usuarios.length == 0) {
-            res.json({ 'message': 'Error al logearse' });
-        } else {
-            const expiresIn = 24 * 60 * 60;
-            const accessToken = jwt.sign({ id: copiaUsuario.usuario }, SECRET_KEY, {expiresIn:expiresIn});
-            console.log(accessToken);
-            res.json(accessToken);
-        }
-    }
 
+        const usuarios = await pool.query('SELECT * FROM USUARIOS', [req.params]);
+        if (usuarios.length == 0) {
+            const hash = bcrypt.hashSync(copiaUsuario.password, 10);
+            await pool.query('INSERT INTO USUARIOS (usuario, password) VALUES (?, ?)', [copiaUsuario.usuario, hash]);
+            res.json({
+                'code': '1',
+                'message': 'No hay usuarios registrados',
+            });
+            
+        } 
+
+        const usuario = await pool.query('SELECT * FROM USUARIOS WHERE usuario=?', [copiaUsuario.usuario]);
+        if (usuario.length == 0){
+            res.json({
+                'code': '2',
+                'message': "El usuario no se encuentra en la base de datos"
+            });
+        }
+        
+        if (bcrypt.compareSync(copiaUsuario.password, usuario[0].password)) {
+            const expiresIn = 24 * 60 * 60;
+            const accessToken = jwt.sign({ id: copiaUsuario.usuario }, SECRET_KEY, { expiresIn: expiresIn });
+            res.json({
+                'code': '0',
+                'message': 'Login correcto',
+                'token': accessToken
+            });
+        }
+
+        res.json({
+            'code': '3',
+            'message': 'Contraseña incorrecta',       
+        });  
+    }
 }
 export const usuariosController = new UsuariosController;

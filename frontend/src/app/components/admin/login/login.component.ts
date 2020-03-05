@@ -6,6 +6,8 @@ import {  } from '@fortawesome/free-brands-svg-icons';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UsuarioService } from 'src/app/services/usuario.service';
+import { Usuario } from 'src/app/modelo/usuario';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -29,14 +31,27 @@ export class LoginComponent implements OnInit {
 
   submit() {
     this.usuarioService.getLogin(this.formLogin.value).subscribe(
-       res => {
-         localStorage.setItem('token', res);
-         this.router.navigate(['/control']);
-         console.log(res);
-       },
-       err => {
-         console.log(err);
-       });
+      res => {
+        switch (res.code) {
+          case '0':
+            console.log(res.message);
+            localStorage.setItem('token', res.token);
+            this.router.navigate(['/control']);
+            break;
+          case '1':
+            console.log(res.message);
+            break;
+          case '2':
+            console.log(res.message);
+            break;
+          case '3':
+            console.log(res.message);
+            break;
+        }
+      },
+      err => {
+        console.log(err);
+      });
    }
 
   get usuario() {

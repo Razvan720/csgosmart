@@ -1,6 +1,6 @@
 .todo {
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
     display: grid;
     grid-template-columns: 1fr 4fr;
     grid-template-areas: "sidebar main";
@@ -51,4 +51,5 @@
     width: 100%;
     grid-area: main;
     background-color: rgba(0, 0, 0, 0.589);
+    overflow-y: auto;
 }

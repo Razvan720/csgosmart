@@ -1,16 +1,15 @@
 .todo {
     width: 100%;
     height: 100%;
-    max-height: 100%;
     display: grid;
     grid-template-columns: 1fr 4fr 1fr;
-    grid-template-rows: 1fr 4fr 3fr;
+    grid-template-rows: 50px 400px 1fr;
     grid-template-areas: "titulo titulo titulo" ". centro ." ". nuevo .";
 }
 
 .cont-titulo {
     grid-area: titulo;
-    height: 60%;
+    height: 100%;
     width: 60%;
     margin: 0 auto;
     text-align: center;
@@ -21,28 +20,28 @@
 .cont-updates {
     grid-area: centro;
     height: 100%;
+    max-height: 400px;
     width: 100%;
     overflow-y: hidden;
 }
 
 .cont-nuevo {
     grid-area: nuevo;
-    height: 100%;
     width: 100%;
     display: flex;
-    align-items: center;
-}
-
-.aniadir {
-    width: 50%;
+    flex-direction: column;
 }
 
 .cont-add {
     display: none;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
 }
 
 .cont-add-visible {
-    display: block;
+    display: flex;
 }
 
 .invisible {
@@ -51,11 +50,27 @@
 
 .input-titulo {
     width: 80%;
+    text-align: center;
     border-radius: 5px;
+    margin-bottom: 20px;
+    margin-top: 35px;
 }
 
 .input-textarea {
-    width: 90%;
-    height: 200px;
+    width: 80%;
+    height: 100px;
+    text-align: center;
     border-radius: 5px;
+}
+
+.btn-nuevo {
+    border-radius: 0px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.btn-aniadir {
+    margin-top: 15px;
+    margin-bottom: 45px;
+    width: 220px;
 }

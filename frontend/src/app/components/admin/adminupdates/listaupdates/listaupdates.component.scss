@@ -16,14 +16,6 @@
 
 .fila {
     display: table-row;
-    border-radius: 10px;
-}
-
-
-/*Color zebra*/
-
-.fila:nth-child(even) {
-    background-color: rgb(206, 206, 206);
 }
 
 .fila:hover {
@@ -39,6 +31,7 @@
     display: table-cell;
     padding: 12px;
     overflow-x: hidden;
+    border-top: 1px solid rgb(190, 190, 190);
 }
 
 .id {

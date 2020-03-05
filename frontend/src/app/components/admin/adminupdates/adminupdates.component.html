@@ -13,7 +13,7 @@
         <button type="button" id="boton-add" class="btn btn-success btn-nuevo" (click)="mostrarAdd()">Nueva Actualización</button>
 
         <form [formGroup]="formUpdate" id="form-add" class="cont-add">
-            <input type="text" formControlName="titulo" class="input-titulo" placeholder="Titulo">
+            <input type="text" formControlName="titulo" id="titulo" class="input-titulo" placeholder="Titulo">
             <textarea formControlName="contenido" class="input-textarea" placeholder="Contenido"></textarea>
 
             <button type="button" (click)="addUpdate()" class="btn btn-success btn-aniadir">Añadir</button>

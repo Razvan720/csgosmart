@@ -26,6 +26,7 @@ export class AdminupdatesComponent implements OnInit {
   mostrarAdd(){
     document.getElementById("form-add").classList.toggle("cont-add-visible");
     document.getElementById("boton-add").classList.toggle("invisible");
+    
   }
 
   addUpdate(){
@@ -36,6 +37,9 @@ export class AdminupdatesComponent implements OnInit {
       err => {
         console.log(err);
       })
+
+      let prueba = (<HTMLInputElement> document.getElementById("titulo")).value;
+    console.log(prueba);
       
   }
 

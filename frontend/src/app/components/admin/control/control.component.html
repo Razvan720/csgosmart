@@ -1,15 +1,37 @@
 <div class="todo">
-    <div class="sidebar">
-        <a href="/"><img src="../../../../assets/img/logo.png" class="logo"></a>
-        <div class="cont-botones-side">
-            <a routerLink="updates" class="link-side">UPDATES</a>
-            <a routerLink="armas" class="link-side">ARMAS</a>
-            <a routerLink="mapas" class="link-side">MAPAS</a>
-            <a routerLink="cajas" class="link-side">CAJAS</a>
-            <a routerLink="perfil" class="link-side">PERFIL</a>
+    <div class="menu">
+        <!-- MENU -->
+        <nav class="navbar navbar-expand-sm navbar-dark fixed-top color_barra letras-barra tamanio">
+            <!-- Logo -->
+            <a class="navbar-brand"><img class="logo" src="../../../../assets/img/logo.png"></a>
+            <!-- Toggler/collapsibe Button -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-        </div>
+            <!-- Links -->
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a routerLink="updates" class="nav-link ">Updates</a>
+                    </li>
+                    <li class="nav-item">
+                        <a routerLink="mapas" class="nav-link">Mapas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a routerLink="armas" class="nav-link">Armas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a routerLink="mapas" class="nav-link">Cajas</a>
+                    </li>
+
+                </ul>
+            </div>
+
+        </nav>
     </div>
+
+
     <div class="main">
         <router-outlet></router-outlet>
     </div>

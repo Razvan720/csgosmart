@@ -2,54 +2,40 @@
     height: 100%;
     width: 100%;
     display: grid;
-    grid-template-columns: 1fr 4fr;
-    grid-template-areas: "sidebar main";
+    grid-template-rows: 80px 5fr;
+    grid-template-areas: "barra" "main";
     /*****/
     background-image: url("../../../../assets/img/fondo_admin.jpg");
     background-size: 100% 100%;
-    background-attachment: fixed;
+    background-attachment: scroll;
+    overflow-y: auto;
 }
 
-.sidebar {
-    height: 100%;
+.menu {
+    grid-area: barra;
     width: 100%;
-    grid-area: sidebar;
-    /*****/
-    background-color: rgba(16, 26, 49, 0.849);
+    height: 100%;
 }
 
 .logo {
-    margin-top: 7%;
-    width: 90%;
+    width: 200px;
 }
 
-.cont-botones-side {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /*****/
-    margin-top: 10%;
+.nav-link:hover {
+    color: rgb(247, 198, 0) !important;
 }
 
-.link-side {
-    width: 100%;
-    /****/
-    font-size: 2em;
-    text-align: center;
-    text-decoration: none;
-    color: white;
-    /****/
-    border-bottom: 2px solid rgb(223, 152, 0);
+.nav-item {
+    margin-left: 20px;
+    font-family: Noto Sans;
 }
 
-.link-side:hover {
-    color: rgb(233, 195, 71);
+.color_barra {
+    background: rgba(0, 117, 128, 0.596);
 }
 
 .main {
     height: 100%;
     width: 100%;
     grid-area: main;
-    background-color: rgba(0, 0, 0, 0.589);
-    overflow-y: auto;
 }

@@ -1,24 +1,24 @@
 <div class="todo">
 
-    <form [formGroup]="formLogin" class="box" method="post">
+    <form [formGroup]="formLogin" class="box" (submit)="submit()">
         <h1>Login</h1>
 
-        <input type="text" name="" placeholder="Username" formControlName="usuario">
+        <input type="text" placeholder="Username" formControlName="usuario">
         <div *ngIf="usuario.invalid && (usuario.dirty || usuario.touched)">
             <div *ngIf="usuario.errors.required">
-                El nombre del usuario es obligatorio
+                El nombre de usuario es obligatorio
             </div>
 
             <div *ngIf="usuario.errors.minlength">
-                El nombre debe ser de al menos 8 carácteres
+                El nombre de usuario debe ser de al menos 8 carácteres
             </div>
 
-            <div *ngIf="usuario.errors.naxlenght">
-                El nombre no debe superar los 30 caraácteres
+            <div *ngIf="usuario.errors.maxlenght">
+                El nombre de usuario no debe superar los 30 caraácteres
             </div>
         </div>
-
-        <input type="password" name="" placeholder="Password" formControlName="password">
+    
+        <input type="password" placeholder="Password" formControlName="password">
         <div *ngIf="password.invalid && (password.dirty || password.touched)">
             <div *ngIf="password.errors.required">
                 La contraseña del usuario es obligatoria
@@ -28,12 +28,12 @@
                 La contraseña debe ser de al menos 8 carácteres
             </div>
 
-            <div *ngIf="password.errors.naxlenght">
+            <div *ngIf="password.errors.maxlenght">
                 La contraseña no debe superar los 30 caraácteres
             </div>
         </div>
-
-        <input type="submit" name="" [disabled]="!formLogin.valid" value="Login">
+        
+        <input type="submit" [disabled]="!formLogin.valid" value="Login">
     </form>
 
 </div>

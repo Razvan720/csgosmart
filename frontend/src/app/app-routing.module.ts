@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { MainusuarioComponent } from './components/usuario/mainusuario/mainusuario.component';
 import { LoginComponent } from './components/admin/login/login.component';
 import { ControlComponent } from './components/admin/control/control.component';
+import { GLoginUserGuard } from './services/glogin-user.guard';
 
 
 const routes: Routes = [
@@ -18,10 +19,11 @@ const routes: Routes = [
   {
     path: 'control',
     component: ControlComponent,
-    loadChildren: () => import('./moduloadmin/control.module').then(m => m.ControlModule)
+    loadChildren: () => import('./moduloadmin/control.module').then(m => m.ControlModule),
+    canActivate: [GLoginUserGuard]
   },
 
-  { path: '**', redirectTo:''}
+  { path: '**', redirectTo: ''}
 
 ];
 

@@ -9,7 +9,7 @@ import { Update } from '../../../../modelo/update';
 })
 export class ListaupdatesComponent implements OnInit {
 
-  public updates: Update;
+  public updates: Update[];
 
   constructor(public updateservice: UpdatesService) { }
 
@@ -29,12 +29,20 @@ export class ListaupdatesComponent implements OnInit {
     this.updateservice.deleteUpdates(id).subscribe(
       res => {
         console.log(res);
-        document.getElementById(id).remove;
+        /*Borramos el update de la bd y al modificar el array angular detecta que
+        tiene que rederizar de nuevo*/ 
+
+        const index = this.updates.findIndex(update=>{
+          return update.id === id;
+        })
+        
+        this.updates.splice(index, 1);
+       
       },
       err => {
         console.log(err);
       })
-      document.getElementById(id).remove();
+     
 
   }
 

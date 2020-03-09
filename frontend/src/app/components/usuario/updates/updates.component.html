@@ -1,3 +1,10 @@
-<div>
-    Holaaa
+<div class="todo">
+    <div class="cont-updates">
+        <div *ngFor="let update of updates" class="cont-update">
+            <div class="titulo">{{ update.titulo }}</div>
+            <div class="fecha">{{ update.fecha }}</div>
+            <div class="contenido">{{ update.contenido }}</div>
+        </div>
+
+    </div>
 </div>

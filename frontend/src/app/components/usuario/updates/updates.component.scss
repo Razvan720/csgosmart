@@ -1,0 +1,33 @@
+.todo {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-areas: ". centro .";
+}
+
+.cont-updates {
+    grid-area: centro;
+    width: 100%;
+    background-color: rgba(11, 14, 19, 0.95);
+    border-radius: 10px;
+    margin-top: 35%;
+}
+
+.cont-update {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 2%;
+}
+
+.titulo {
+    /*Letras*/
+    font-size: 30px;
+    font-family: Quantico;
+    color: white;
+}
+
+.contenido {
+    color: rgb(189, 189, 189);
+    text-align: justify;
+}

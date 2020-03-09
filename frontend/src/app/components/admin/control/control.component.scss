@@ -21,17 +21,21 @@
     width: 200px;
 }
 
+.nav-link {
+    color: rgb(161, 161, 161) !important;
+}
+
 .nav-link:hover {
     color: rgb(247, 198, 0) !important;
 }
 
 .nav-item {
     margin-left: 20px;
-    font-family: Noto Sans;
 }
 
 .color_barra {
-    background: rgba(0, 117, 128, 0.596);
+    background: rgba(26, 26, 26, 0.795);
+    border-bottom: 2px solid rgb(0, 177, 9);
 }
 
 .main {

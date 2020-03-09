@@ -11,6 +11,9 @@ import { AdmincajasComponent } from 'src/app/components/admin/admincajas/adminca
 import { ListaupdatesComponent } from 'src/app/components/admin/adminupdates/listaupdates/listaupdates.component';
 import { AdminperfilComponent } from '../components/admin/adminperfil/adminperfil.component';
 
+import { SharedModule } from '../shared/shared.module';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
 
 
 @NgModule({
@@ -21,11 +24,14 @@ import { AdminperfilComponent } from '../components/admin/adminperfil/adminperfi
     AdmincajasComponent,
     ListaupdatesComponent,
     AdminperfilComponent
+
+
   ],
   imports: [
     CommonModule,
     ControlRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FontAwesomeModule
   ]
 })
 export class ControlModule {}

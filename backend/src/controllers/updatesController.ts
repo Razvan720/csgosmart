@@ -20,7 +20,9 @@ class UpdatesController {
     }
 
     public async update(req: Request, res: Response) {
+        console.log("Entra");
         const resultado = await pool.query('UPDATE UPDATES SET ? WHERE id=? ', [req.params.id]);
+        
         res.json(resultado);
     }
 

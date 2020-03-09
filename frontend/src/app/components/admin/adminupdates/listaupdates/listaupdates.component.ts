@@ -1,6 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { UpdatesService } from '../../../../services/updates.service';
 import { Update } from '../../../../modelo/update';
+
+import { faCoffee } from '@fortawesome/free-solid-svg-icons';
+
 
 @Component({
   selector: 'app-listaupdates',
@@ -9,20 +12,17 @@ import { Update } from '../../../../modelo/update';
 })
 export class ListaupdatesComponent implements OnInit {
 
-  public updates: Update[];
+  @Input() public updates: Update[];
+  @Output() public updateEvent: EventEmitter<Update> = new EventEmitter ();
+  
+
+  /*Fontawesome*/
+  faCoffee = faCoffee;
 
   constructor(public updateservice: UpdatesService) { }
 
   ngOnInit() {
-    this.updateservice.getUpdates().subscribe(
-      res => {
-        console.log(res);
-        this.updates = res;
-      },
-      err => {
-        console.log(err);
-      }
-    )
+    
   }
 
   borrarUpdate(id: string) {
@@ -35,7 +35,7 @@ export class ListaupdatesComponent implements OnInit {
         const index = this.updates.findIndex(update=>{
           return update.id === id;
         })
-        
+
         this.updates.splice(index, 1);
        
       },
@@ -43,7 +43,10 @@ export class ListaupdatesComponent implements OnInit {
         console.log(err);
       })
      
+  }
 
+  editarUpdate(update: Update){
+    this.updateEvent.emit(update);
   }
 
 }

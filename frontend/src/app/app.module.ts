@@ -26,16 +26,18 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
+    MainusuarioComponent,
     BarranavegacionComponent,
     BotonarmasComponent,
-    MainusuarioComponent,
+    
     ControlComponent,
     LoginComponent,
-    
-    
+   
+        
   ],
   imports: [
     BrowserModule,
@@ -52,10 +54,5 @@ import { ReactiveFormsModule } from '@angular/forms';
   bootstrap: [AppComponent]
 })
 export class AppModule {
-  // constructor(library: FaIconLibrary){
-    
-  //   library.addIcons(
-  //     faEdit
-  //   );
-  // }
+
  }

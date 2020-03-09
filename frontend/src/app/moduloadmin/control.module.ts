@@ -28,8 +28,4 @@ import { AdminperfilComponent } from '../components/admin/adminperfil/adminperfi
     ReactiveFormsModule
   ]
 })
-export class ControlModule {
-  constructor() {
-
-  }
-}
+export class ControlModule {}

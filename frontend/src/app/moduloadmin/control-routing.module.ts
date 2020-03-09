@@ -33,10 +33,7 @@ const routes: Routes = [
     path: 'perfil',
     component: AdminperfilComponent,
   },
-  {
-    path: '**',
-    redirectTo: ''
-  }
+ 
 
 ];
 

@@ -10,8 +10,9 @@ const routes: Routes = [
   {
     path: '',
     component: MainusuarioComponent,
-    pathMatch: 'full'
-  },
+    loadChildren: () => import('./modulousuario/modulousuario.module').then(m => m.ModulousuarioModule)
+    
+  }, 
   {
     path: 'admin',
     component: LoginComponent
@@ -22,8 +23,12 @@ const routes: Routes = [
     loadChildren: () => import('./moduloadmin/control.module').then(m => m.ControlModule),
     canActivate: [GLoginUserGuard]
   },
+  {
+    path: '**',
+    redirectTo: 'updates'
+  }
 
-  { path: '**', redirectTo: ''}
+  
 
 ];
 

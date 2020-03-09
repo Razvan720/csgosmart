@@ -40,6 +40,7 @@ export class LoginComponent implements OnInit {
             break;
           case '1':
             console.log(res.message);
+            this.router.navigate(['/control']);
             break;
           case '2':
             console.log(res.message);

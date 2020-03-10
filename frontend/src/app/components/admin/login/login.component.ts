@@ -50,13 +50,11 @@ export class LoginComponent implements OnInit {
               }
             );
 
-            
+
             this.router.navigate(['/control']);
             break;
           case '1':
             console.log(res.message);
-            this.indexedDbService.insertToken(token)
-            this.router.navigate(['/control']);
             break;
           case '2':
             console.log(res.message);

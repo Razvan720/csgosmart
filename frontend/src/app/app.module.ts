@@ -4,10 +4,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { ModulousuarioModule } from './modulousuario/modulousuario.module';
 
-/*Fontawesome*/
-// import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
-// import {  } from '@fortawesome/free-regular-svg-icons';
-// import { faEdit } from '@fortawesome/free-solid-svg-icons';
 
 /*Componentes*/
 import { AppComponent } from './app.component';
@@ -21,9 +17,6 @@ import { ArmasService } from './services/armas.service';
 import { LoginComponent } from './components/admin/login/login.component';
 import { ControlComponent } from './components/admin/control/control.component';
 import { ReactiveFormsModule } from '@angular/forms';
-
-
-
 
 
 

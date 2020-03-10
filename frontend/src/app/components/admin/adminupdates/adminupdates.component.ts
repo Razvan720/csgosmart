@@ -13,9 +13,14 @@ export class AdminupdatesComponent implements OnInit {
 
   public updates: Update[];
   public formUpdate: FormGroup;
-  public isAdding = false; //Variable para controlar formulario de añadir update
+
+  /*Variables para controlar formulario de añadir/editar update*/
+  public isAdding = false; 
   public isEditing = false;
+
+  /* Variables que vienen de la lista*/
   public updateToEdit: Update;
+  public updateToDelete: Update;
 
 
   constructor(private formBuilder: FormBuilder, private updateservice: UpdatesService) {
@@ -39,15 +44,14 @@ export class AdminupdatesComponent implements OnInit {
         console.log(err);
       }
     });
-
   }
 
   mostrarAdd(): void {
     this.isAdding = true;
+    this.isEditing = false;
   }
 
   addUpdate() {
-
     this.updateservice.saveUpdates(this.formUpdate.value).pipe(first()).subscribe({
       next: (res) => {
         console.log(res);
@@ -62,6 +66,7 @@ export class AdminupdatesComponent implements OnInit {
 
   mostrarEditar(update: Update): void {
     this.isEditing = true;
+    this.isAdding = false;
     this.updateToEdit = update;
     this.formUpdate.patchValue({
       titulo: update.titulo,
@@ -86,7 +91,28 @@ export class AdminupdatesComponent implements OnInit {
         console.log(err);
       }
 
+      
     })
+  }
+
+  deleteUpdate(update: Update): void{
+    this.updateToDelete = update;
+
+    this.updateservice.deleteUpdates(this.updateToDelete.id).subscribe(
+      res => {
+        console.log(res);
+        /*Borramos el update de la bd y al modificar el array angular detecta que
+        tiene que rederizar de nuevo*/ 
+        const index = this.updates.findIndex(update=>{
+          return update.id === this.updateToDelete.id;
+        })
+
+        this.updates.splice(index, 1);
+       
+      },
+      err => {
+        console.log(err);
+      })
   }
 
 

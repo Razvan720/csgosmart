@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Update } from 'src/app/modelo/Update';
 import { UpdatesService } from 'src/app/services/updates.service';
+/*Fontawesome */
+import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
+import { faClock } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-updates',
@@ -10,17 +13,18 @@ import { UpdatesService } from 'src/app/services/updates.service';
 export class UpdatesComponent implements OnInit {
   public updates: Update;
 
-  constructor( public updateservice: UpdatesService) { }
- 
+  constructor(public updateservice: UpdatesService) { }
+
+  faCalendarAlt = faCalendarAlt;
+  faClock = faClock;
 
   ngOnInit() {
     this.updateservice.getUpdates().subscribe(
       res => {
-        console.log(res);
         this.updates = res;
       },
       err => {
-        console.log(err);
+
       }
     )
   }

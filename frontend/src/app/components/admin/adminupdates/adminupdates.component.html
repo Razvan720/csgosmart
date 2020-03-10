@@ -1,12 +1,12 @@
 <div class="todo">
 
     <div class="cont-updates">
-        <app-listaupdates [updates]="updates" (updateEvent)="mostrarEditar($event)"></app-listaupdates>
+        <app-listaupdates [updates]="updates" (updateEvent)="mostrarEditar($event)" (deleteEvent)="deleteUpdate($event)"></app-listaupdates>
     </div>
 
     <div class="cont-nuevo">
 
-        <button *ngIf="!isAdding" type="button" id="boton-add" class="btn btn-success btn-nuevo" (click)="mostrarAdd()">Nueva
+        <button *ngIf="!isAdding && !isEditing" type="button" id="boton-add" class="btn btn-success btn-nuevo" (click)="mostrarAdd()">Nueva
       Actualización</button>
 
         <ng-container *ngIf="isAdding || isEditing">
@@ -14,9 +14,8 @@
                 <input type="text" formControlName="titulo" id="titulo" class="input-titulo" placeholder="Titulo">
                 <textarea formControlName="contenido" class="input-textarea" placeholder="Contenido"></textarea>
 
-
-                <button *ngIf="isAdding" type=" button " (click)="addUpdate() " class="btn btn-success btn-aniadir ">Añadir</button>
-                <button *ngIf="isEditing" type="button" (click)="editUpdate()" class="btn btn-success btn-aniadir">Editar</button>
+                <button *ngIf="isAdding && !isEditing" type=" button " (click)="addUpdate() " class="btn btn-success btn-aniadir ">Añadir</button>
+                <button *ngIf="isEditing && !isAdding" type="button" (click)="editUpdate()" class="btn btn-success btn-aniadir">Editar</button>
 
             </form>
         </ng-container>

@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { ModulousuarioRoutingModule } from './modulousuario-routing.module';
 import { UpdatesComponent } from '../components/usuario/updates/updates.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { UpdatesComponent } from '../components/usuario/updates/updates.componen
   ],
   imports: [
     CommonModule,
-    ModulousuarioRoutingModule
+    ModulousuarioRoutingModule,
+    FontAwesomeModule
   ]
 })
 export class ModulousuarioModule { }

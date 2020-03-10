@@ -2,7 +2,10 @@
     <div class="cont-updates">
         <div *ngFor="let update of updates" class="cont-update">
             <div class="titulo">{{ update.titulo }}</div>
-            <div class="fecha">{{ update.fecha }}</div>
+            <div class="fecha">
+                <fa-icon [icon]="faCalendarAlt" class="color-icono"></fa-icon> {{ update.fecha | date: 'dd/MM/yyyy'}}
+                <fa-icon [icon]="faClock" class="color-icono"></fa-icon> {{ update.fecha | date: 'HH:mm'}}
+            </div>
             <div class="contenido">{{ update.contenido }}</div>
         </div>
 

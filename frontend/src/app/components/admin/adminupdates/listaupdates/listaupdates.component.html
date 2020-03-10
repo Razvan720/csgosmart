@@ -9,11 +9,13 @@
         <div *ngFor="let update of updates" class="fila" id="{{ update.id }}">
 
             <div class="col-tabla nombre">{{ update.titulo }}</div>
-            <div class="col-tabla">{{ update.fecha | date: 'dd/MM/yyyy' }}</div>
+            <div class="col-tabla">{{ update.fecha | date: 'dd/MM/yyyy - HH:mm' }}</div>
             <div class="col-tabla">{{ update.contenido }}</div>
             <div class="col-tabla iconos">
-                <button type="button" class="btn btn-warning espaciado" (click)="editarUpdate(update)"><fa-icon [icon]="faCoffee"></fa-icon>Editar</button>
-                <button type="button" class="btn btn-danger espaciado" (click)="borrarUpdate(update.id)">Borrar</button>
+                <button type="button" class="btn btn-warning espaciado" (click)="editarUpdate(update)">
+                    <fa-icon [icon]="faEdit"></fa-icon></button>
+                <button type="button" class="btn btn-danger espaciado" (click)="borrarUpdate(update)">
+                    <fa-icon [icon]="faTrash"></fa-icon></button>
             </div>
         </div>
 

@@ -40,6 +40,7 @@ class Server {
         this.app.use('/utilidades', utilidadesRoutes);
         this.app.use('/categorias', categoriasRoutes);
         this.app.use('/tipogranadas', tipogranadasRoutes);
+    
     }
 
     start(): void {

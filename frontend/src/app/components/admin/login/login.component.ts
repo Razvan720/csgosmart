@@ -7,6 +7,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UsuarioService } from 'src/app/services/usuario.service';
 import { Usuario } from 'src/app/modelo/usuario';
+import { IndexedDbService } from 'src/app/services/indexed-db.service';
+import { Token } from 'src/app/modelo/Token';
 
 @Component({
   selector: 'app-login',
@@ -15,10 +17,9 @@ import { Usuario } from 'src/app/modelo/usuario';
 })
 
 export class LoginComponent implements OnInit {
-
   public formLogin: FormGroup;
 
-  constructor(library: FaIconLibrary, private router: Router, private formBuilder: FormBuilder, private usuarioService: UsuarioService) {
+  constructor(library: FaIconLibrary, private router: Router, private formBuilder: FormBuilder, private usuarioService: UsuarioService, private indexedDbService: IndexedDbService) {
     this.formLogin = formBuilder.group({
       usuario: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(30)]],
       password: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(30)]]
@@ -30,16 +31,31 @@ export class LoginComponent implements OnInit {
   }
 
   submit() {
+    const token: Token = {id:"session_token", value:"1234"};
     this.usuarioService.getLogin(this.formLogin.value).subscribe(
       res => {
         switch (res.code) {
           case '0':
             console.log(res.message);
             localStorage.setItem('token', res.token);
+
+            this.indexedDbService.insertToken(token)
+
+            this.indexedDbService.readToken().subscribe(
+              res => {
+                console.log(res);
+              },
+              err => {
+                console.log(err);
+              }
+            );
+
+            
             this.router.navigate(['/control']);
             break;
           case '1':
             console.log(res.message);
+            this.indexedDbService.insertToken(token)
             this.router.navigate(['/control']);
             break;
           case '2':

@@ -33,6 +33,7 @@ class UpdatesController {
     }
     update(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
+            console.log("Entra");
             const resultado = yield database_1.default.query('UPDATE UPDATES SET ? WHERE id=? ', [req.params.id]);
             res.json(resultado);
         });

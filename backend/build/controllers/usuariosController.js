@@ -35,10 +35,25 @@ class UsuariosController {
             res.json(usuarios);
         });
     }
-    update(req, res) {
+    pedro(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const resultado = yield database_1.default.query('UPDATE USUARIOS SET ? WHERE id=? ', [req.params.id]);
-            res.json(resultado);
+            const usuarios = yield database_1.default.query('SELECT * FROM USUARIOS');
+            res.json(usuarios);
+            /*
+            console.log('llega');
+            const usuario = await pool.query('SELECT * FROM USUARIOS WHERE usuario=?', [req.body.upass_usuario]);
+            console.log(usuario);
+            if (usuario.length == 0){
+                res.json({
+                    'code': '1',
+                    'message': "El usuario no se encuentra en la base de datos"
+                });
+            }
+            
+            if (bcrypt.compareSync(req.body.upass_password, usuario[0].password)) {
+                const resultado = await pool.query('UPDATE USUARIOS SET password = ? WHERE id= ? ', [req.body.upass_new_password,usuario.id]);
+            }
+            */
         });
     }
     delete(req, res) {

@@ -23,9 +23,9 @@ class UsuariosController {
         res.json(usuarios);
     }
 
-    public async updatePass(req: Request, res: Response) {
-        const resultado = {'error': 'Error al actualizar'};
-        res.json(resultado);
+    public async pedro(req: Request, res: Response) {
+        const usuarios = await pool.query('SELECT * FROM USUARIOS');
+        res.json(usuarios);
         /*
         console.log('llega');
         const usuario = await pool.query('SELECT * FROM USUARIOS WHERE usuario=?', [req.body.upass_usuario]);

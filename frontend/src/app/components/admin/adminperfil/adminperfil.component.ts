@@ -1,8 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
-import { faUser } from '@fortawesome/free-solid-svg-icons';
-import { faUnlock } from '@fortawesome/free-solid-svg-icons';
-import {  } from '@fortawesome/free-brands-svg-icons';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UsuarioService } from 'src/app/services/usuario.service';
@@ -17,13 +13,13 @@ export class AdminperfilComponent implements OnInit {
 
   public formUpdatePass: FormGroup;
 
-  constructor(library: FaIconLibrary, private router: Router, private formBuilder: FormBuilder, private usuarioService: UsuarioService) {
+  constructor(private router: Router, private formBuilder: FormBuilder, private usuarioService: UsuarioService) {
     this.formUpdatePass = formBuilder.group({
       upass_usuario: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(30)]],
       upass_password: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(30)]],
       upass_new_password: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(30)]]
     });
-    library.addIcons(faUser, faUnlock);
+   
   }
 
   ngOnInit() {

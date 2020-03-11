@@ -2,34 +2,6 @@
 <li class="nav-item dropdown">
     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"> Armas </a>
     <ul class="dropdown-menu">
-
-        <li class="dropdown-submenu">
-            <a class="dropdown-item dropdown-toggle" href="#">
-                <img class="icono rifle"> Rifles</a>
-            <ul class="dropdown-menu">
-                <li *ngFor="let arma of armas">
-                    <a class="dropdown-item" href="#">{{ arma.nombre }}</a></li>
-
-            </ul>
-        </li>
-        <li class="dropdown-submenu">
-            <a class="dropdown-item dropdown-toggle" href="#">
-                <img class="icono smg"> SMG</a>
-            <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">UMP</a></li>
-
-
-            </ul>
-        </li>
-        <li class="dropdown-submenu">
-            <a class="dropdown-item dropdown-toggle" href="#">
-                <img class="icono pesado"> Pesado</a>
-            <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Nova</a></li>
-
-
-            </ul>
-        </li>
         <li class="dropdown-submenu">
             <a class="dropdown-item dropdown-toggle" href="#">
                 <img class="icono pistola"> Pistolas</a>
@@ -39,5 +11,29 @@
 
             </ul>
         </li>
+        <li class="dropdown-submenu">
+            <a class="dropdown-item dropdown-toggle" href="#">
+                <img class="icono smg"> SMG</a>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">UMP</a></li>
+            </ul>
+        </li>
+        <li class="dropdown-submenu">
+            <a class="dropdown-item dropdown-toggle" href="#">
+                <img class="icono rifle"> Rifles</a>
+            <ul class="dropdown-menu">
+                <li *ngFor="let arma of armas">
+                    <a class="dropdown-item" href="#">{{ arma.nombre }}</a></li>
+            </ul>
+        </li>
+
+        <li class="dropdown-submenu">
+            <a class="dropdown-item dropdown-toggle" href="#">
+                <img class="icono pesado"> Pesado</a>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Nova</a></li>
+            </ul>
+        </li>
+
     </ul>
 </li>

@@ -4,11 +4,13 @@
     </div>
     <div class="cont-perfil">
         <h3>Cambio de contraseña</h3>
+        <form [formGroup]="formUpdatePass" class="box" (submit)="submit()">
+            <input class="input-password" type="text" placeholder="Usuario" formControlName="upass_usuario">
+            <input class="input-password" type="password" placeholder="Antigüa Contraseña" formControlName="upass_password">
+            <input class="input-password" type="password" placeholder="Nueva Contraseña" formControlName="upass_new_password">
 
-        <input class="input-password" type="password" placeholder="Nueva Contraseña">
-
-
-        <button class="btn btn-success boton" type="input">Cambiar</button>
+            <button class="btn btn-success boton" type="submit">Cambiar</button>
+        </form>
 
     </div>
 </div>

@@ -18,4 +18,7 @@ export class ControlComponent implements OnInit {
   ngOnInit() {
   }
 
+  logout(): void{
+    localStorage.removeItem('token');
+  }
 }

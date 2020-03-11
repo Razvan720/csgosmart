@@ -12,7 +12,9 @@ import { ListaupdatesComponent } from 'src/app/components/admin/adminupdates/lis
 import { AdminperfilComponent } from '../components/admin/adminperfil/adminperfil.component';
 
 import { SharedModule } from '../shared/shared.module';
+
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
 
 
 

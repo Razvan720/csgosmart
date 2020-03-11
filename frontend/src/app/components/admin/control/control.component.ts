@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+/*Fontawesome */
+import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-control',
@@ -7,8 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ControlComponent implements OnInit {
 
+  faSignOutAlt = faSignOutAlt;
+
   constructor() { }
 
+  
+  
   ngOnInit() {
   }
 

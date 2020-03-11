@@ -1,6 +1,6 @@
 .contenedor {
     width: 100%;
-    height: 400px;
+    height: 380px;
     overflow-y: auto;
     margin-top: 20px;
 }
@@ -12,6 +12,7 @@
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     background: rgb(224, 224, 224);
+    text-align: center;
 }
 
 .fila {
@@ -19,7 +20,8 @@
 }
 
 .fila:hover {
-    background: rgba(68, 186, 207, 0.164);
+    transition: 0.5s;
+    background: rgba(27, 160, 184, 0.116);
 }
 
 .titulos {
@@ -30,8 +32,8 @@
 .col-tabla {
     display: table-cell;
     padding: 12px;
-    overflow-x: auto;
-    border-top: 1px solid rgb(190, 190, 190);
+    overflow-x: hidden;
+    border-bottom: 1px solid rgb(190, 190, 190);
 }
 
 .id {

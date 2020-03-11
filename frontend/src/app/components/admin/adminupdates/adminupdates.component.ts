@@ -115,6 +115,11 @@ export class AdminupdatesComponent implements OnInit {
       })
   }
 
+  cancelar(): void {
+    this.isAdding = false;
+    this.isEditing = false;
+  }
+
 
 
 }

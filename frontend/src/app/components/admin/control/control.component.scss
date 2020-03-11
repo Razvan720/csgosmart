@@ -27,6 +27,7 @@
 
 .nav-link:hover {
     color: rgb(247, 198, 0) !important;
+    transition: 0.5s;
 }
 
 .nav-item {
@@ -34,12 +35,23 @@
 }
 
 .color_barra {
-    background: rgba(26, 26, 26, 0.795);
+    background: rgba(26, 26, 26, 0.911);
     border-bottom: 2px solid rgb(0, 177, 9);
 }
 
 .margen {
     margin-right: 30px;
+}
+
+.logout {
+    color: rgb(29, 29, 29) !important;
+    background-color: rgb(197, 158, 0);
+    border-radius: 5px;
+}
+
+.logout:hover {
+    color: rgb(29, 29, 29) !important;
+    background-color: rgb(247, 198, 0);
 }
 
 .main {

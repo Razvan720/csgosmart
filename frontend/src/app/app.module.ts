@@ -17,6 +17,7 @@ import { ArmasService } from './services/armas.service';
 import { LoginComponent } from './components/admin/login/login.component';
 import { ControlComponent } from './components/admin/control/control.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 
@@ -26,20 +27,19 @@ import { ReactiveFormsModule } from '@angular/forms';
     MainusuarioComponent,
     BarranavegacionComponent,
     BotonarmasComponent,
-    
+
     ControlComponent,
     LoginComponent,
-   
-        
+
+
   ],
   imports: [
     BrowserModule,
-    
     AppRoutingModule,
-    ModulousuarioModule,
-    
+
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FontAwesomeModule
   ],
   providers: [
     ArmasService
@@ -48,4 +48,4 @@ import { ReactiveFormsModule } from '@angular/forms';
 })
 export class AppModule {
 
- }
+}

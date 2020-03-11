@@ -4,13 +4,13 @@
 
             <div class="col-tabla nombre">Nombre</div>
             <div class="col-tabla">Fecha</div>
+            <div class="col-tabla"></div>
         </div>
 
         <div *ngFor="let update of updates" class="fila" id="{{ update.id }}">
 
             <div class="col-tabla nombre">{{ update.titulo }}</div>
             <div class="col-tabla">{{ update.fecha | date: 'dd/MM/yyyy - HH:mm' }}</div>
-            <div class="col-tabla">{{ update.contenido }}</div>
             <div class="col-tabla iconos">
                 <button type="button" class="btn btn-warning espaciado" (click)="editarUpdate(update)">
                     <fa-icon [icon]="faEdit"></fa-icon></button>
@@ -18,7 +18,6 @@
                     <fa-icon [icon]="faTrash"></fa-icon></button>
             </div>
         </div>
-
 
 
     </div>

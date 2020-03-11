@@ -14,8 +14,12 @@
                 <input type="text" formControlName="titulo" id="titulo" class="input-titulo" placeholder="Titulo">
                 <textarea formControlName="contenido" class="input-textarea" placeholder="Contenido"></textarea>
 
-                <button *ngIf="isAdding && !isEditing" type=" button " (click)="addUpdate() " class="btn btn-success btn-aniadir ">Añadir</button>
-                <button *ngIf="isEditing && !isAdding" type="button" (click)="editUpdate()" class="btn btn-success btn-aniadir">Editar</button>
+                <div>
+                    <button type="button" (click)="cancelar()" class="btn btn-danger btn-aniadir">Cancelar</button>
+                    <button *ngIf="isAdding && !isEditing" type=" button " (click)="addUpdate() " class="btn btn-success btn-aniadir ">Añadir</button>
+                    <button *ngIf="isEditing && !isAdding" type="button" (click)="editUpdate()" class="btn btn-success btn-aniadir">Editar</button>
+                </div>
+
 
             </form>
         </ng-container>

@@ -15,16 +15,14 @@ export class AdminupdatesComponent implements OnInit {
   public formUpdate: FormGroup;
 
   /*Variables para controlar formulario de añadir/editar update*/
-  public isAdding = false; 
+  public isAdding = false;
   public isEditing = false;
 
   /* Variables que vienen de la lista*/
   public updateToEdit: Update;
-  public updateToDelete: Update;
-
 
   constructor(private formBuilder: FormBuilder, private updateservice: UpdatesService) {
-    this.formUpdate = formBuilder.group({
+    this.formUpdate = this.formBuilder.group({
       titulo: ['', [Validators.required, Validators.minLength(6)]],
       contenido: ['']
     })
@@ -57,6 +55,7 @@ export class AdminupdatesComponent implements OnInit {
         console.log(res);
         this.suscriptionGetUpdates();
         this.isAdding = false;
+        this.clearForm(this.formUpdate);
       },
       error: (err) => {
         console.log(err);
@@ -91,28 +90,28 @@ export class AdminupdatesComponent implements OnInit {
         console.log(err);
       }
 
-      
     })
   }
 
-  deleteUpdate(update: Update): void{
-    this.updateToDelete = update;
+  deleteUpdate(index: number): void {
+    const updateToDelete = this.updates[index];
 
-    this.updateservice.deleteUpdates(this.updateToDelete.id).subscribe(
+    this.updateservice.deleteUpdates(updateToDelete.id).subscribe(
       res => {
         console.log(res);
         /*Borramos el update de la bd y al modificar el array angular detecta que
-        tiene que rederizar de nuevo*/ 
-        const index = this.updates.findIndex(update=>{
-          return update.id === this.updateToDelete.id;
-        })
-
+        tiene que rederizar de nuevo*/
         this.updates.splice(index, 1);
-       
+
       },
       err => {
         console.log(err);
       })
+  }
+
+
+  clearForm(formUpdate: FormGroup):void{
+    formUpdate.reset();
   }
 
   cancelar(): void {

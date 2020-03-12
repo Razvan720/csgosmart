@@ -17,7 +17,7 @@
                 El nombre de usuario no debe superar los 30 caraácteres
             </div>
         </div>
-    
+
         <input type="password" placeholder="Password" formControlName="password">
         <div *ngIf="password.invalid && (password.dirty || password.touched)">
             <div *ngIf="password.errors.required">
@@ -32,8 +32,12 @@
                 La contraseña no debe superar los 30 caraácteres
             </div>
         </div>
-        
+
         <input type="submit" [disabled]="!formLogin.valid" value="Login">
+
+        <div *ngIf="mensajeEvento != null">
+            {{ mensajeEvento }}
+        </div>
     </form>
 
 </div>

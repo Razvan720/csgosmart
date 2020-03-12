@@ -17,6 +17,7 @@ import { Usuario } from 'src/app/modelo/usuario';
 export class LoginComponent implements OnInit {
 
   public formLogin: FormGroup;
+  public mensajeEvento: String = null;
 
   constructor(library: FaIconLibrary, private router: Router, private formBuilder: FormBuilder, private usuarioService: UsuarioService) {
     this.formLogin = formBuilder.group({
@@ -37,16 +38,20 @@ export class LoginComponent implements OnInit {
             console.log(res.message);
             localStorage.setItem('token', res.token);
             this.router.navigate(['/control']);
+            this.mensajeEvento = res.message;
             break;
           case '1':
             console.log(res.message);
             this.router.navigate(['/control']);
+            this.mensajeEvento = res.message;
             break;
           case '2':
             console.log(res.message);
+            this.mensajeEvento = res.message;
             break;
           case '3':
             console.log(res.message);
+            this.mensajeEvento = res.message;
             break;
         }
       },

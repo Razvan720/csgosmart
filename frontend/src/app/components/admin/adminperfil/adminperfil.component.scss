@@ -4,23 +4,22 @@
     color: white;
 }
 
-.cont-titulo {
-    height: 10%;
-    width: 70%;
-    margin: 0 auto;
-    text-align: center;
-    border-bottom: 1px solid rgb(100, 255, 108);
-    margin-bottom: 5%;
-}
-
 .cont-perfil {
     width: 50%;
     height: 50%;
+    margin: 0 auto;
+}
+
+.cont-centrado {
+    margin-top: 50px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    margin: 0 auto;
+}
+
+.advertencia {
+    font-style: italic;
+    font-weight: 500;
 }
 
 .pass {
@@ -29,10 +28,12 @@
 }
 
 .boton {
-    margin-top: 5%;
+    width: 150px;
 }
 
-.input-password {
+.input {
+    margin-top: 10px;
     width: 60%;
     border-radius: 10px;
+    text-align: center;
 }

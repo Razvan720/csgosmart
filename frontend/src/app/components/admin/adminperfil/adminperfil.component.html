@@ -1,15 +1,68 @@
 <div class="todo">
-    <div class="cont-titulo">
-        <h1>Perfil</h1>
-    </div>
-    <div class="cont-perfil">
-        <h3>Cambio de contraseña</h3>
-        <form [formGroup]="formUpdatePass" class="box" (submit)="submit()">
-            <input class="input-password" type="text" placeholder="Usuario" formControlName="upass_usuario">
-            <input class="input-password" type="password" placeholder="Antigüa Contraseña" formControlName="upass_password">
-            <input class="input-password" type="password" placeholder="Nueva Contraseña" formControlName="upass_new_password">
 
-            <button class="btn btn-success boton" type="submit">Cambiar</button>
-        </form>
-    </div>
+    <form [formGroup]="formUpdatePass" class="cont-perfil" (submit)="submit()">
+        <div class="cont-centrado">
+            <h3>Confirmar credenciales</h3>
+            <div class="advertencia"> Tendras que confirmar tus datos de inicio antes de poder cambiar la contraseña</div>
+
+            <input class="input" type="text" placeholder="Usuario" formControlName="upass_usuario">
+            <div *ngIf="upass_usuario.invalid && (upass_usuario.dirty || upass_usuario.touched)">
+                <div *ngIf="upass_usuario.errors.required">
+                    El nombre de usuario es obligatorio
+                </div>
+
+                <div *ngIf="upass_usuario.errors.minlength">
+                    El nombre de usuario debe ser de al menos 8 carácteres
+                </div>
+
+                <div *ngIf="upass_usuario.errors.maxlenght">
+                    El nombre de usuario no debe superar los 30 carácteres
+                </div>
+            </div>
+
+            <input class="input" type="password" placeholder="Contraseña" formControlName="upass_password">
+            <div *ngIf="upass_password.invalid && (upass_password.dirty || upass_password.touched)">
+                <div *ngIf="upass_password.errors.required">
+                    La contraseña del usuario es obligatoria
+                </div>
+
+                <div *ngIf="upass_password.errors.minlength">
+                    La contraseña debe ser de al menos 8 carácteres
+                </div>
+
+                <div *ngIf="upass_password.errors.maxlenght">
+                    La contraseña no debe superar los 30 carácteres
+                </div>
+            </div>
+
+        </div>
+
+        <div class="cont-centrado">
+            <h3>Cambio de Contraseña</h3>
+            <input class="input" type="password" placeholder="Nueva Contraseña" formControlName="upass_new_password">
+            <div *ngIf="upass_new_password.invalid && (upass_new_password.dirty || upass_new_password.touched)">
+                <div *ngIf="upass_new_password.errors.required">
+                    La contraseña del usuario es obligatoria
+                </div>
+
+                <div *ngIf="upass_new_password.errors.minlength">
+                    La contraseña debe ser de al menos 8 carácteres
+                </div>
+
+                <div *ngIf="upass_new_password.errors.maxlenght">
+                    La contraseña no debe superar los 30 carácteres
+                </div>
+            </div>
+        </div>
+
+        <div class="cont-centrado">
+            <button class="btn btn-success boton" [disabled]="!formLogin.valid" type="submit">Cambiar</button>
+        </div>
+
+        <div *ngIf="mensajeEvento != null" class="cont-centrado">
+            {{ mensajeEvento }}
+        </div>
+
+    </form>
+
 </div>

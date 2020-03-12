@@ -12,6 +12,7 @@ import { Usuario } from 'src/app/modelo/usuario';
 export class AdminperfilComponent implements OnInit {
 
   public formUpdatePass: FormGroup;
+  public mensajeEvento:String = null;
 
   constructor(private router: Router, private formBuilder: FormBuilder, private usuarioService: UsuarioService) {
     this.formUpdatePass = formBuilder.group({
@@ -19,7 +20,7 @@ export class AdminperfilComponent implements OnInit {
       upass_password: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(30)]],
       upass_new_password: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(30)]]
     });
-   
+
   }
 
   ngOnInit() {
@@ -28,18 +29,20 @@ export class AdminperfilComponent implements OnInit {
   submit() {
     this.usuarioService.updatePassword(this.formUpdatePass.value).subscribe(
       res => {
-        switch(res.code){
+        switch (res.code) {
           case '0':
+            this.mensajeEvento = res.message;
             break;
           case '1':
-              break;
+            this.mensajeEvento = res.message;
+            break;
         }
         console.log(res)
       },
       err => {
         console.log(err);
       });
-   }
+  }
 
   get upass_usuario() {
     return this.formUpdatePass.get('upass_usuario');

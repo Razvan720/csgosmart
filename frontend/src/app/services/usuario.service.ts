@@ -27,9 +27,8 @@ export class UsuarioService {
     return this.http.delete(`http://localhost:3000/usuarios/${id}`);
   }
 
-  updatePassword(info: any): Observable<any> {
-    console.log(info);
-    return this.http.post('http://localhost:3000/usuarios/upass/', {info});
+  updatePassword(upass: Upass): Observable<any> {
+    return this.http.post('http://localhost:3000/usuarios/upass/', upass);
   }
 
   getLogin(usuario: Usuario): Observable<any> {

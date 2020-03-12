@@ -28,6 +28,12 @@ export class AdminperfilComponent implements OnInit {
   submit() {
     this.usuarioService.updatePassword(this.formUpdatePass.value).subscribe(
       res => {
+        switch(res.code){
+          case '0':
+            break;
+          case '1':
+              break;
+        }
         console.log(res)
       },
       err => {

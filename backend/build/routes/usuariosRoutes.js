@@ -10,7 +10,7 @@ class UsuariosRoutes {
     config() {
         this.router.post('/', usuariosController_1.usuariosController.create);
         this.router.get('/', usuariosController_1.usuariosController.read);
-        this.router.post('/pedro', usuariosController_1.usuariosController.pedro);
+        this.router.post('/upass', usuariosController_1.usuariosController.updatePass);
         this.router.delete('/:id', usuariosController_1.usuariosController.delete);
         this.router.get('/:id', usuariosController_1.usuariosController.readOne);
         this.router.post('/login', usuariosController_1.usuariosController.readLogin);

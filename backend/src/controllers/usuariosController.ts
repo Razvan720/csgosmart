@@ -23,9 +23,24 @@ class UsuariosController {
         res.json(usuarios);
     }
 
-    public async update(req: Request, res: Response) {
-        const resultado = await pool.query('UPDATE USUARIOS SET ? WHERE id=? ', [req.params.id]);
-        res.json(resultado);
+    public async pedro(req: Request, res: Response) {
+        const usuarios = await pool.query('SELECT * FROM USUARIOS');
+        res.json(usuarios);
+        /*
+        console.log('llega');
+        const usuario = await pool.query('SELECT * FROM USUARIOS WHERE usuario=?', [req.body.upass_usuario]);
+        console.log(usuario);
+        if (usuario.length == 0){
+            res.json({
+                'code': '1',
+                'message': "El usuario no se encuentra en la base de datos"
+            });
+        }
+        
+        if (bcrypt.compareSync(req.body.upass_password, usuario[0].password)) {
+            const resultado = await pool.query('UPDATE USUARIOS SET password = ? WHERE id= ? ', [req.body.upass_new_password,usuario.id]);
+        }
+        */
     }
 
     public async delete(req: Request, res: Response) {

@@ -16,7 +16,7 @@ export class ListaupdatesComponent implements OnInit {
 
   @Input() public updates: Update[];
   @Output() public updateEvent: EventEmitter<Update> = new EventEmitter ();
-  @Output() public deleteEvent: EventEmitter<Update> = new EventEmitter ();
+  @Output() public deleteEvent: EventEmitter<number> = new EventEmitter ();
   
 
   /*Fontawesome*/
@@ -33,8 +33,8 @@ export class ListaupdatesComponent implements OnInit {
     this.updateEvent.emit(update);
   }
   
-  borrarUpdate(update: Update) {
-    this.deleteEvent.emit(update);
+  borrarUpdate(index: number) {
+    this.deleteEvent.emit(index);
     
   }
 

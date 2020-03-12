@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 12-03-2020 a las 18:04:59
+-- Tiempo de generación: 12-03-2020 a las 18:32:38
 -- Versión del servidor: 10.1.35-MariaDB
 -- Versión de PHP: 7.2.9
 
@@ -159,13 +159,6 @@ CREATE TABLE `usuarios` (
   `usuario` varchar(45) DEFAULT NULL,
   `password` varchar(150) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Volcado de datos para la tabla `usuarios`
---
-
-INSERT INTO `usuarios` (`id`, `usuario`, `password`) VALUES
-(5, 'username', '$2a$10$bFPuu4CBBDWS5w5f422ftuEMB3JXzmDhqVTwUMWAxIrvTK14j57cq');
 
 -- --------------------------------------------------------
 

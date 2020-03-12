@@ -3,3 +3,9 @@
 2 - Instalar Modulos Angular mediante "npm i"
 
 Esto deberia instalar todos los modulos necesarios de Angular, Bootstrap y el JsonWebToken.
+
+INSTRUCIONES DE USO DE LA PAGINA
+* Para proceder a entrar en la parte de administrador habra que poner "/admin" en la url
+* Al principio no habra usuarios creados, la primera vez que escribamos unas credenciales en el login, se creará dicho usuario.
+* Ahora ya podremos ir otra vez al login y entrar con nuestra cuenta previamente creada.
+* En la parte de adminstracion podremos crear/borrar/editar updates, cambiar nuestra contraseña y cerrar sesion.

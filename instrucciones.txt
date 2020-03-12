@@ -1,0 +1,5 @@
+1 - Importar la BD desde la carpeta database.
+
+2 - Instalar Modulos Angular mediante "npm i"
+
+Esto deberia instalar todos los modulos necesarios de Angular, Bootstrap y el JsonWebToken.
